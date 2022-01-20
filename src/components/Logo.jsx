@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Logo(props) {
   return (
-    <div type={props.type}>
+    <div type='default'>
       {props.type == "muted" ? (
         <svg
           width="135"

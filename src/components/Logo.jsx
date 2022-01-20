@@ -17,7 +17,7 @@ export default function Logo(props) {
             fill="#181828"
           />
         </svg>
-      ) : props.type == "" ? (
+      ) : props.type == null ? (
         <svg
           width="135"
           height="62"

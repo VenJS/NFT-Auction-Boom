@@ -24,5 +24,8 @@
     "start-server": "next start",
     "start": "next -p 8080",
     "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
+  },
+  "devDependencies": {
+    "webpac": "^0.0.1-security"
   }
 }

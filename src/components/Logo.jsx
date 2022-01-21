@@ -1,7 +1,7 @@
 import React from "react";
 
 
-export default function Logo({ type }) {
+const Logo = props =>  { const {type} = props
   return (
     <div >
       {type == "muted" ? (
@@ -12,3 +12,5 @@ export default function Logo({ type }) {
     </div>
   );
 }
+
+export default Logo

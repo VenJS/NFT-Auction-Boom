@@ -1,7 +1,7 @@
 import React from "react";
 
 
-export default function Logo({ type }) {
+export default function Logo({type}) {
   return (
     <div >
       {type == "muted" ? (

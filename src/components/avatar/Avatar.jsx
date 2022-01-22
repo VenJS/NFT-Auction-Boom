@@ -3,9 +3,9 @@ import classNames from 'classnames'
 
 export default function Avatar({size, url, verified}) {
     return (
-        <div className={classNames(styles.avatar)} style={{width: size || '90px', height: size || '90px'}} ver={verified}>
+        <div className={classNames(styles.avatar)} style={{width: size, height: size}} >
             <img className={classNames(styles.image)} src={url} ></img>
-            <img className={classNames(styles.badge)} src='images/verified.svg'></img>
+            <img className={classNames(styles.badge)} src='images/verified.svg' ver={verified}></img>
         </div>
     )
     

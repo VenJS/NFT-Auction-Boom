@@ -1,0 +1,36 @@
+@use "../../styles/colors";
+
+.wrapper {
+  padding: 10px;
+  background-color: colors.$background_default;
+  margin: 30px 0px 30px 0px;
+}
+
+.container {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.paper {
+  display: flex;
+  max-width: 350px;
+  width: 100%;
+  font-size: 10rem;
+  position: relative;
+  text-align: center;
+  color: colors.$text_primary !important;
+}
+
+.paperExplore {
+  display: flex;
+  margin-left: 20px !important;
+  max-width: 350px;
+  width: 100%;
+  font-size: 10rem;
+  position: relative;
+  text-align: center;
+  color: colors.$text_primary !important;
+  background-color: colors.$primary_main !important;
+}
+

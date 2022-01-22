@@ -3,6 +3,6 @@ import Avatar from "../src/components/avatar/Avatar";
 
 export default function Index() {
   return <div><Header />
-    <Avatar size='90' url='images/avatar.png' verified='false' />
+    <Avatar url='images/avatar.png' verified='false' />
   </div>;
 }

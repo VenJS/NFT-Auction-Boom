@@ -8,7 +8,7 @@ import { Favorite } from "@mui/icons-material";
 
 export default function Card({
   name = "String",
-  likes = 1.1,
+  likes = 0,
   mediaUrl = "String",
   user = {
     avatar: {

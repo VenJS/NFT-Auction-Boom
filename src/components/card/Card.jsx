@@ -16,8 +16,8 @@ export default function Card({
     },
     verified: "Boolean",
   },
-  price = "~12.2 ETH",
-  currency = "String",
+  price = "~12.2",
+  currency = " ETH",
 }) {
   return (
     <div>
@@ -34,7 +34,7 @@ export default function Card({
               units: ["K", "M", 'B']
             })}
           ></Chip>
-          <div className={classNames(styles.price)}>{price}</div>
+          <div className={classNames(styles.price)}>{price}{currency}</div>
         </div>
       </CardTag>
     </div>

@@ -5,7 +5,7 @@ import { Container } from "@mui/material";
 import classNames from "classnames";
 import styles from "./Trending.module.scss";
 
-export default function Trending({ cards = [""] }) {
+export default function Trending({ cards = [] }) {
   return (
     <div>
       <Container maxWidth="false">

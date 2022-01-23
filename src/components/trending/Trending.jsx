@@ -5,13 +5,13 @@ import { Container } from "@mui/material";
 import classNames from "classnames";
 import styles from "./Trending.module.scss";
 
-export default function Trending({ cards = "" }) {
+export default function Trending({ cards = [""] }) {
   return (
     <div>
       <Container maxWidth="false">
         <div className={classNames(styles.trending)}>Trending</div>
-        <Select className={classNames(styles.select)} >
-        <MenuItem label='this week'>This week</MenuItem>
+        <Select className={classNames(styles.select)}>
+        <MenuItem value = {10} label='this week'>This week</MenuItem>
         </Select>
       </Container>
       <Grid container spacing={10}>

@@ -8,7 +8,7 @@ import { Favorite } from "@mui/icons-material";
 
 export default function Card({
   name = "String",
-  likes = 0,
+  likes = '1.1',
   mediaUrl = "String",
   user = {
     avatar: {
@@ -30,9 +30,7 @@ export default function Card({
             className={classNames(styles.likes)}
             icon={<Favorite className={classNames(styles.icon)} />}
             clickable
-            label={millify(likes, {
-              units: ["k", "M", "B"]
-            })}
+            label={millify(likes)}
           ></Chip>
           <div className={classNames(styles.price)}>{price} {currency}</div>
         </div>

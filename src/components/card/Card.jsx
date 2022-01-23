@@ -9,7 +9,7 @@ import { Favorite } from "@mui/icons-material";
 export default function Card({
   name = "String",
   likes = 0,
-  mediaUrl = "String",
+  mediaUrl = "images/nft.jpg",
   user = {
     avatar: {
       url: "String",
@@ -23,7 +23,7 @@ export default function Card({
     <div>
       <CardTag className={classNames(styles.card)}>
         <Avatar url="images/avatar.png" size="55px" />
-        <img className={classNames(styles.media)} src="images/nft.jpg" />
+        <img className={classNames(styles.media)} src={mediaUrl} />
         <div className={classNames(styles.container)}>
           <div className={classNames(styles.title)}>{name}</div>
           <Chip

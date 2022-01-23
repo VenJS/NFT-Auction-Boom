@@ -31,7 +31,7 @@ export default function Card({
             icon={<Favorite className={classNames(styles.icon)} />}
             clickable
             label={millify(likes, {
-              units: ["K", "M", 'B'],
+              units: ["K", "M", 'B']
             })}
           ></Chip>
           <div className={classNames(styles.price)}>{price}</div>

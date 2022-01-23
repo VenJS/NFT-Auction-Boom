@@ -6,32 +6,19 @@ import classNames from "classnames";
 import styles from "./Card.module.scss";
 import { Favorite } from "@mui/icons-material";
 
-const data = {
-  name: "String",
-  likes: "Number",
-  mediaUrl: "String",
-  user: {
+export default function Card({
+  name = "String",
+  likes = 0,
+  mediaUrl = "String",
+  user = {
     avatar: {
       url: "String",
     },
     verified: "Boolean",
   },
-  price: "String",
-  currency: "String",
-};
-
-export default function Card() {
-  const {
-    name,
-    likes,
-    mediaUrl,
-    user,
-    avatar,
-    url,
-    verified,
-    price,
-    currency,
-  } = data;
+  price = "String",
+  currency = "String",
+}) {
   return (
     <div>
       <CardTag className={classNames(styles.card)}>
@@ -43,12 +30,11 @@ export default function Card() {
             className={classNames(styles.likes)}
             icon={<Favorite className={classNames(styles.icon)} />}
             clickable
-            label={millify(1.1, {
+            label={millify(likes, {
               units: ["K", "M"],
             })}
           ></Chip>
           <div className={classNames(styles.price)}>{price}</div>
-          
         </div>
       </CardTag>
     </div>

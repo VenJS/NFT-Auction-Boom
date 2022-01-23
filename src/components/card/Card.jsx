@@ -16,7 +16,7 @@ export default function Card({
     },
     verified: "Boolean",
   },
-  price = "String",
+  price = "12.2 ETH",
   currency = "String",
 }) {
   return (
@@ -31,10 +31,10 @@ export default function Card({
             icon={<Favorite className={classNames(styles.icon)} />}
             clickable
             label={millify(likes, {
-              units: ["K", "M"],
+              units: ["k", "M", 'B'],
             })}
           ></Chip>
-          <div className={classNames(styles.price)}>{price}</div>
+          <div className={classNames(styles.price)}>~{price}</div>
         </div>
       </CardTag>
     </div>

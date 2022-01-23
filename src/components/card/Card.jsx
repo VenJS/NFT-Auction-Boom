@@ -34,7 +34,7 @@ export default function Card({
               units: ["k", "M", "B"]
             })}
           ></Chip>
-          <div className={classNames(styles.price)}>{price}{currency}</div>
+          <div className={classNames(styles.price)}>{price} {currency}</div>
         </div>
       </CardTag>
     </div>

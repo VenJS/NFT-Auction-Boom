@@ -11,7 +11,7 @@ export default function Card({
   name = "String",
   likes = 0,
   mediaUrl = "images/nft.jpg",
-  timeLeft = 1000000,
+  timeLeft = 100000000,
   user = {
     avatar: {
       url: "String",
@@ -29,7 +29,7 @@ export default function Card({
         <div className={classNames(styles.container)}>
           {
             <div className={classNames(styles.countdown)}>
-              <Countdown date={Date.now() + 1000000}></Countdown>
+              <Countdown date={Date.now() + timeLeft}></Countdown>
             </div>
           }
           <div className={classNames(styles.title)}>{name}</div>

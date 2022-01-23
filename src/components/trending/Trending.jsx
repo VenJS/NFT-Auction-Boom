@@ -1,29 +1,33 @@
 import Card from "../card/Card";
-import { Select } from "@mui/material";
+import { MenuItem, Select } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import { Container } from "@mui/material";
+import classNames from "classnames";
+import styles from "./Trending.module.scss";
 
-export default function Trending({ cards = [""] }) {
+export default function Trending({ cards = "" }) {
   return (
-    <Container maxWidth="false">
+    <div>
+      <Container maxWidth="false">
+        <div className={classNames(styles.trending)}>Trending</div>
+        <Select className={classNames(styles.select)} >
+        <MenuItem label='this week'>This week</MenuItem>
+        </Select>
+      </Container>
       <Grid container spacing={10}>
         <Grid item xs={3}>
-          <Card />
-          <Select />
+          <Card name="Clock"/>
         </Grid>
         <Grid item xs={3}>
-          <Card />
-          <Select />
+          <Card name="DOGE"/>
         </Grid>
         <Grid item xs={3}>
-          <Card />
-          <Select />
+          <Card name="BTC"/>
         </Grid>
         <Grid item xs={3}>
-          <Card />
-          <Select />
+          <Card name="Litecoin"/>
         </Grid>
       </Grid>
-    </Container>
+    </div>
   );
 }

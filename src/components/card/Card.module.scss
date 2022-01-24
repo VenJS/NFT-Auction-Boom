@@ -68,3 +68,18 @@
   right: 240px;
   bottom: 95px;
 }
+
+.badge {
+  display: flex;
+  justify-content: center;
+  border: 1px solid;
+  border-radius: 10px;
+  width: 75px;
+  background-color: colors.$success_main;
+  color: colors.$background_default;
+  position: relative;
+  left: 600px;
+  top: 150px;
+  font-size: 15px;
+  font-weight: bold;
+}

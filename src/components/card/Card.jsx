@@ -26,6 +26,10 @@ export default function Card({
       <CardTag className={classNames(styles.card)}>
         <Avatar url="images/avatar.png" size="55px" />
         <img className={classNames(styles.media)} src={mediaUrl} />
+        <div className={classNames(styles.badge)}>
+          <FiberManualRecordIcon></FiberManualRecordIcon>
+          <span>LIVE</span>
+        </div>
         <div className={classNames(styles.container)}>
           {
             <div className={classNames(styles.countdown)}>

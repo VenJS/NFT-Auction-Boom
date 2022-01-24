@@ -22,8 +22,9 @@ export default function Card({
   price = "~12.2",
   currency = "ETH",
 }) {
+  
   return (
-    <div>
+    <div> 
       <CardTag className={classNames(styles.card)}>
         <Avatar url="images/avatar.png" size="55px" />
         <img className={classNames(styles.media)} src={mediaUrl} />
@@ -48,7 +49,8 @@ export default function Card({
             {price} {currency}
           </div>
         </div>
-      </CardTag>
-    </div>
-  );
-}
+      </CardTag> 
+    </div> )} 
+    
+ 
+

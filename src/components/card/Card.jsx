@@ -6,6 +6,7 @@ import classNames from "classnames";
 import styles from "./Card.module.scss";
 import { Favorite } from "@mui/icons-material";
 import Countdown from "react-countdown";
+import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 
 export default function Card({
   name = "String",

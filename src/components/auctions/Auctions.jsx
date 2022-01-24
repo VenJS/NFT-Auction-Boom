@@ -30,7 +30,7 @@ export default function Auctions({ cards = [] }) {
           <Card name='DOGE'></Card>
         </Grid>
         <Grid item xs={3}>
-          <Card nema='BTC'></Card>
+          <Card name='BTC'></Card>
         </Grid>
         <Grid item xs={3}>
           <Card name="Litecoin"></Card>

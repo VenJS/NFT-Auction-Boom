@@ -24,16 +24,16 @@ export default function Auctions({ cards = [] }) {
       </Container>
       <Grid container spacing={1}>
         <Grid item xs={3}>
-          <Card></Card>
+          <Card name='Clock'></Card>
         </Grid>
         <Grid item xs={3}>
-          <Card></Card>
+          <Card name='DOGE'></Card>
         </Grid>
         <Grid item xs={3}>
-          <Card></Card>
+          <Card nema='BTC'></Card>
         </Grid>
         <Grid item xs={3}>
-          <Card></Card>
+          <Card name="Litecoin"></Card>
         </Grid>
       </Grid>
     </div>

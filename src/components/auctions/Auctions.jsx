@@ -1,13 +1,13 @@
 import { Select } from "@mui/material";
-import { Button, Container } from "@mui/material";
+import { Container } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import LocalFireDepartmentIcon from "@mui/icons-material/LocalFireDepartment";
 import classNames from "classnames";
-import styles from "./Auction.module.scss";
+import styles from "./Auctions.module.scss";
 import { MenuItem } from "@mui/material";
 import Card from "../card/Card";
 
-export default function Auction({ cards = [] }) {
+export default function Auctions({ cards = [] }) {
   return (
     <div>
       <Container className={classNames(styles.container)}>

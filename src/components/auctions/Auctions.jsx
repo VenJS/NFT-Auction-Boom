@@ -8,6 +8,7 @@ import { MenuItem } from "@mui/material";
 import Card from "../card/Card";
 
 export default function Auctions({ cards = [] }) {
+
   return (
     <div>
       <Container className={classNames(styles.container)}>

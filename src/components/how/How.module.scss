@@ -1,0 +1,28 @@
+@use "../../styles/colors.scss";
+
+.container {
+    background-color: colors.$primary_main;
+    margin: 3vmax;
+    padding-bottom: 5vh;
+}
+
+.title {
+    font-size: 100px;
+    font-weight: bolder;
+    margin-left: 10vh !important;
+    color: colors.$text_primary;
+}
+
+.text {
+    font-size: 25px;
+    padding: 5vw;
+    color: colors.$text_secondary;
+}
+
+.button {
+    display: block !important;
+    background-color: colors.$text_primary !important;
+    width: 180px !important;
+    text-align: center !important;
+    margin-left: 5vw !important;
+}

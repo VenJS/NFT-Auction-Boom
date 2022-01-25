@@ -23,8 +23,10 @@ export default function Card({
   currency = "ETH",
 }) {
   
+  
   return (
     <div> 
+      {timeLeft ?
       <CardTag className={classNames(styles.card)}>
         <Avatar url="images/avatar.png" size="55px" />
         <img className={classNames(styles.media)} src={mediaUrl} />
@@ -49,8 +51,25 @@ export default function Card({
             {price} {currency}
           </div>
         </div>
-      </CardTag> 
-    </div> )} 
+      </CardTag> : <CardTag className={classNames(styles.card)}>
+        <Avatar url="images/avatar.png" size="55px" />
+        <img className={classNames(styles.media)} src={mediaUrl} />
+        <div className={classNames(styles.container)}>
+          <div className={classNames(styles.title)}>{name}</div>
+          <Chip
+            className={classNames(styles.likes)}
+            icon={<Favorite className={classNames(styles.icon)} />}
+            clickable
+            label={millify(likes)}
+          ></Chip>
+          <div className={classNames(styles.price)}>
+            {price} {currency}
+          </div>
+        </div>
+      </CardTag>}
+      
+    </div> )}  
     
+  
  
 

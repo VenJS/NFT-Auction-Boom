@@ -47,27 +47,28 @@ export default function Featured({
       "https://images.unsplash.com/photo-1516802273409-68526ee1bdd6?w=500&h=500",
     title: "Basketball",
     href: "/about",
-  },],
+  }],
 }) {
   const router = useRouter();
-
+  
+  const data = Array.from(items)
+    
   return (
-    <div> {items == [] ? null :
+    <div> {items ?
       <ImageList
         sx={{ width: 500, height: 450 }}
         cols={6}
         rowHeight={121}
       >
-        {items.map((item) => (
-          <ImageListItem cols={item.cols || 1}>
+        {data.map((item, i) => (
+          <ImageListItem key={i} cols={item.cols || 1} rows={item.rows || 1}>
             <img
-              src={item.image}
+              src={`${item.image}?w=164&h=164&fit=crop&auto=format`}
               alt={item.title}
-              loading="lazy"
             />
-          </ImageListItem>
+          </ImageListItem >
         ))}
-      </ImageList>}
+      </ImageList> : null}
     </div>
   );
 }

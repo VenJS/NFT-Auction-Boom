@@ -6,7 +6,7 @@ export default function Index() {
   return (
     <div>
       <Header />
-      <Featured />
+      <Featured items='null'/>
     </div>
   );
 }

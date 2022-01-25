@@ -13,7 +13,7 @@ export default function How({
 }) {
   return (
     <div className={classNames(styles.container)}>
-        <Grid container>
+        <Grid container direction='column'>
       <Grid item className={classNames(styles.title)}>{title}</Grid>
       <Grid item className={classNames(styles.text)}>
         {description}

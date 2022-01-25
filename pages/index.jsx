@@ -1,11 +1,12 @@
 import Header from "../src/components/header/Header";
-import Step from "../src/components/how/Step";
+import Featured from "../src/components/featured/Featured";
+
 
 export default function Index() {
   return (
     <div>
       <Header />
-      <Step />
+      <Featured />
     </div>
   );
 }

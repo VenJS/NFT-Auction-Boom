@@ -1,7 +1,6 @@
-import classNames from "classnames";
-// import styles from "./Collector.module.scss";
 import User from "../user/User";
-import CollectorColumn from "./CollectorColumn";
+import classNames from "classnames";
+import styles from './Collector.module.scss'
 
 export default function Collector({ item, type, index }) {
   return (
@@ -9,11 +8,10 @@ export default function Collector({ item, type, index }) {
       <table>
         <tbody>
           <tr>
-            <td>{index}</td>
-            <td>{item.id}</td>
-            <td>{item.avatar}</td>
+            <td className={classNames(styles.index)}>{index}</td>
+            <td>{<User></User>}</td>
             <td>{item.name}</td>
-            <td>{item.nftsCount}</td>
+            <td className={classNames(styles.nftsCount)}>{item.nftsCount}</td>
           </tr>
         </tbody>
       </table>

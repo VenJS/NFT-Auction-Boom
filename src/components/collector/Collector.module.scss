@@ -1,0 +1,22 @@
+@use "../../styles/colors.scss";
+
+.container {
+    margin: auto;
+    height: 30%;
+    width: 20%;
+}
+
+.lighter {
+    background-color: rgba(colors.$background_paper, 40%);
+    text-align: left;
+
+}
+
+.darker {
+    background-color: colors.$background_paper;
+}
+
+.id {
+    background-color: slateblue;
+    padding: 0;
+}

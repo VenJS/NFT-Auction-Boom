@@ -34,7 +34,7 @@ export default function CollectorColumn({items = [
           item={item}
           index={i + 1}
           type={
-            i % 2 == 0 ? classNames(styles.light) : ''
+            i % 2 !== 0 ? 'light' : ''
           }
         />
       ))}

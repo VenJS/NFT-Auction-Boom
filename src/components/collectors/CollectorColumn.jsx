@@ -1,7 +1,8 @@
 import classNames from "classnames";
 import styles from "./CollectorColumn.module.scss"
 
-export default function CollectorColumn({
+
+ function CollectorColumn({
     items = [
       {
         name: "String",
@@ -48,5 +49,15 @@ export default function CollectorColumn({
     </div>
     )
 
+     function Collector({type}) {
+      return (
+        
+        <div className={classNames(styles.container)}>
+        <CollectorColumn></CollectorColumn>
+        </div>
+      );
+    }
     
 }
+
+export default Collector;

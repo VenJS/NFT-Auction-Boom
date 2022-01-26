@@ -1,5 +1,5 @@
 import Header from "../src/components/header/Header";
-import Collector from "../src/components/collector/Collector";
+import Collector from "../src/components/collectors/Collector"
 
 
 export default function Index() {

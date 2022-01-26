@@ -1,0 +1,20 @@
+@use "../../styles/colors.scss";
+
+.container {
+    margin: auto;
+}
+
+.light {
+    background-color: rgba(colors.$background_paper, 40%);
+    text-align: left;
+
+}
+
+.dark {
+    background-color: colors.$background_paper;
+}
+
+.id {
+    
+    padding: 0;
+}

@@ -10,6 +10,20 @@ export default function CollectorColumn({
         verified: "Boolean",
         id: "Number",
       },
+      {
+        name: "String",
+        nftsCount: "Number",
+        avatar: "String",
+        verified: "Boolean",
+        id: "Number",
+      },
+      {
+        name: "String",
+        nftsCount: "Number",
+        avatar: "String",
+        verified: "Boolean",
+        id: "Number",
+      }
     ],
   }) {
     const data = Array.from(items);
@@ -18,11 +32,11 @@ export default function CollectorColumn({
       {data.map((item, i) => (
         <div key={i}
         className={
-          i % 2 !== 0 ? classNames(styles.lighter) : classNames(styles.darker)
+          i % 2 !== 0 ? classNames(styles.light) : classNames(styles.dark)
         }>
-          <table ><tbody>
+          <table><tbody>
                   <tr>
-                      <th className={classNames(styles.id)}>{item.id}</th>
+                      <th>{item.id}</th>
                       <th>{item.avatar}</th>
                       <th>{item.name}</th>
                       <th>{item.nftsCount}</th>

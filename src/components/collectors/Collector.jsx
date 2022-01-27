@@ -8,7 +8,7 @@ export default function Collector({ item, type, index }) {
       <table>
         <tbody>
           <tr>
-            <td className={classNames(styles.index)}>{item.id}</td>
+            <td className={classNames(styles.index)}>{index}</td>
             <td>{<User></User>}</td>
             <td>{item.name}</td>
             <td className={classNames(styles.nftsCount)}>{item.nftsCount}</td>

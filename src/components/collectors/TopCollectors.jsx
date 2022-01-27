@@ -36,7 +36,10 @@ export default function TopCollectors({
     },
   ],
 }) {
+  const newArr = chunk(collectors, 1)
+
   return (
+    
     <div>
       <Container className={classNames(styles.wrapper)}>
         <div className={classNames(styles.trending)}>Top Collectors</div>
@@ -46,12 +49,8 @@ export default function TopCollectors({
           </MenuItem>
         </Select>
       </Container>
-      <Grid container>
-        {collectors.map((collector, id) => (
-          <CollectorColumn key={id} id={id}>
-            asdasdsadsa
-          </CollectorColumn>
-        ))}
+      <Grid container className={classNames(styles.container)}>
+        {newArr.map((arr, i) => (<CollectorColumn key={i} index={arr[i]}></CollectorColumn>))}
       </Grid>
     </div>
   );

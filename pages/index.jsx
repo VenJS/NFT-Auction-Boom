@@ -1,14 +1,15 @@
-import Header from "../src/components/header/Header";
-import Collector from "../src/components/collectors/CollectorColumn"
-import Avatar from "../src/components/avatar/Avatar";
-import User from "../src/components/user/User";
+
+
+import TopCollectors from "../src/components/collectors/TopCollectors";
+import CollectorColumn from "../src/components/collectors/CollectorColumn";
 
 
 export default function Index() {
   return (
     <div>
-      <Header />
-      <Collector />
+      
+      <TopCollectors />
+      <CollectorColumn></CollectorColumn>
     </div>
   );
 }

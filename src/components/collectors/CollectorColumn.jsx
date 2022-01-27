@@ -7,21 +7,21 @@ export default function CollectorColumn({items = [
     nftsCount: "Number",
     avatar: "String",
     verified: "Boolean",
-    id: "Number",
+    id: 1,
   },
   {
     name: "String",
     nftsCount: "Number",
     avatar: "String",
     verified: "Boolean",
-    id: "Number",
+    id: 2,
   },
   {
     name: "String",
     nftsCount: "Number",
     avatar: "String",
     verified: "Boolean",
-    id: "Number",
+    id: 3,
   },
 ]}) {
   
@@ -32,7 +32,6 @@ export default function CollectorColumn({items = [
         <Collector
           key={i}
           item={item}
-          index={i + 1}
           type={
             i % 2 !== 0 ? classNames(styles.light) : classNames(styles.dark)
           }

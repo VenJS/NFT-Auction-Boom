@@ -1,7 +1,8 @@
 .wrapper {
     display: flex !important;
-    justify-content: space-around;
-    
+    justify-content: space-between;
+    align-items: stretch;
+    margin-top: 25px;
 }
 
 .trending {
@@ -10,12 +11,11 @@
 }
 
 .select {
-    min-width: 150px;
+    width: 20%;
 }
 
 .container {
     display: flex;
     justify-content: center;
-    margin: 20px;
     gap: 20px;
 }

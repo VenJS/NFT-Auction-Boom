@@ -1,7 +1,4 @@
 .select {
-    display: grid !important;
-    margin-bottom: 50px;
-    margin-left: 1200px;
     width: 20%;
 }
 
@@ -10,8 +7,20 @@
 }
 
 .trending {
-    position: relative;
-    top: 50px;
+    
     font-size: 3rem;
     font-weight: bolder;
+}
+
+.wrapper {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.container {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
 }

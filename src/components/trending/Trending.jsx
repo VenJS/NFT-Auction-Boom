@@ -7,24 +7,24 @@ import styles from "./Trending.module.scss";
 
 export default function Trending({ cards = [] }) {
   return (
-    <div>
-      <Container maxWidth="false">
+    <div >
+      <Container maxWidth="false" className={classNames(styles.wrapper)}>
         <div className={classNames(styles.trending)}>Trending</div>
         <Select className={classNames(styles.select)}>
         <MenuItem value = {10} label='this week'>This week</MenuItem>
         </Select>
       </Container>
-      <Grid container spacing={10}>
-        <Grid item xs={3}>
+      <Grid container spacing={1} className={classNames(styles.container)}> 
+        <Grid item >
           <Card name="Clock"/>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item>
           <Card name="DOGE"/>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item >
           <Card name="BTC"/>
         </Grid>
-        <Grid item xs={3}>
+        <Grid item >
           <Card name="Litecoin"/>
         </Grid>
       </Grid>

@@ -1,18 +1,28 @@
 .container {
-    float: left;
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
 }
 
-.liveAuction {
-    position: relative;
-    bottom: 72px,;
-    left: 35px;
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .select {
-    position: relative;
-    left: 1200px;
-    bottom: 150px;
-    width: 200px;
+    display: flex;
+    width: 20%;
+}
+
+.cardContainer {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
 }
 
 

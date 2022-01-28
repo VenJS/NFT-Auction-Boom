@@ -11,30 +11,30 @@ import chunk from "lodash.chunk";
 export default function TopCollectors({
   collectors = [
     {
-      name: "String",
-      nftsCount: "Number",
+      name: "G. K",
+      nftsCount: "341",
       avatar: "String",
-      verified: "Boolean",
+      verified: true,
     },
     {
-      name: "String",
-      nftsCount: "Number",
+      name: "Michael Poulsen",
+      nftsCount: "168",
       avatar: "String",
-      verified: "Boolean",
+      verified: true,
     },
     {
-      name: "String",
-      nftsCount: "Number",
+      name: "James Hetfield",
+      nftsCount: "107",
       avatar: "String",
-      verified: "Boolean",
+      verified: true,
     },
     {
-      name: "String",
-      nftsCount: "Number",
+      name: "Steven Tyler",
+      nftsCount: 71,
       avatar: "String",
-      verified: "Boolean",
+      verified: true,
     },
-  ],
+  ]
 }) {
   const newArr = chunk(collectors, 1)
 

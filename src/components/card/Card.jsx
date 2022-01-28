@@ -11,7 +11,7 @@ import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 export default function Card({
   name = "String",
   likes = 0,
-  mediaUrl = "images/nft.jpg",
+  mediaUrl = "images/nft.jpg", 
   timeLeft = 100000000,
   user = {
     avatar: {

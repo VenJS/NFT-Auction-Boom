@@ -6,6 +6,12 @@ import How from "../src/components/how/How";
 import Auctions from "../src/components/auctions/Auctions";
 import Footer from "../src/components/footer/Footer"
 import TopCollectors from "../src/components/collectors/TopCollectors";
+import dataActivity from '../data/activity.json';
+import dataFeatured from '../data/featured.json';
+import dataNfts from '../data/nfts.json';
+import dataProfile from '../data/profile.json';
+import dataTrending from '../data/trending.json';
+import dataUsers from '../data/users.json';
 
 
 

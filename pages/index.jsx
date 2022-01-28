@@ -11,6 +11,7 @@ import dataNfts from "../data/nfts.json";
 import dataProfile from "../data/profile.json";
 import dataTrending from "../data/trending.json";
 import dataUsers from "../data/users.json";
+import ProductImage from "../src/components/product/ProductImage";
 
 export default function Index() {
   return (
@@ -99,6 +100,7 @@ export default function Index() {
       <Auctions cards={['BTC', 'Kusama', 'Tron', 'PolkaDot']}></Auctions>
 
       <Footer></Footer>
+      <ProductImage></ProductImage>
     </div>
   );
 }

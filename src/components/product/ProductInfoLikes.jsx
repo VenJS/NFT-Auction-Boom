@@ -6,7 +6,7 @@ import { Chip } from "@mui/material";
 export default function ProductInfoLikes({ amount = 0 }) {
   return (
     <div className={classNames(styles["product-info-likes"])}>
-      <Chip className={classNames(styles.likes)} label={millify(amount)}></Chip>
+      <Chip className={classNames(styles.likes)} label={millify(amount)} variant="outlined"></Chip>
     </div>
   );
 }

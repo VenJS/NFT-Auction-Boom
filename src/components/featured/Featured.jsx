@@ -1,4 +1,3 @@
-import { Container } from "@mui/material";
 import { ImageList, ImageListItem } from "@mui/material";
 import styles from "./Featured.module.scss";
 import { useRouter } from "next/router";

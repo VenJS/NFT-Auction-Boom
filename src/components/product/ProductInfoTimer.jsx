@@ -5,7 +5,7 @@ import Countdown from "react-countdown";
 
 export default function ProductInfoTimer({
   timeEnd = '2022-07-30',
-  onTimeEnd = () => <span>Auction is over!</span>
+  onTimeEnd 
 }) {
   return (
     <div className={classNames(styles["product-info-timer"])}>
@@ -20,7 +20,7 @@ export default function ProductInfoTimer({
             
             
           >
-            {onTimeEnd()}
+            {onTimeEnd}
           </Countdown>
         </div>
       )}

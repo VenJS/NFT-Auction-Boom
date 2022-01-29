@@ -1,13 +1,16 @@
+@use '../../styles/colors.scss';
+
 .product-info-creator {
     display: flex;
     justify-content: center;
 }
 
-.product-info-creator {
+.user-container {
     display: flex;
     justify-content: center;
 }
 
 .title {
     font-weight: bolder;
+    color: colors.$info_main;
 }

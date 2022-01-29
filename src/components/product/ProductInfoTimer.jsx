@@ -2,8 +2,9 @@ import classNames from "classnames";
 import styles from "./ProductInfoTimer.module.scss";
 import Countdown from "react-countdown";
 
+
 export default function ProductInfoTimer({
-  timeEnd = 5000,
+  timeEnd = '2022-01-29T23:33:03',
   onTimeEnd
 }) {
   return (
@@ -15,7 +16,7 @@ export default function ProductInfoTimer({
           <p className={classNames(styles.title)}>Ends In</p>
           <Countdown
             className={classNames(styles.active)}
-            date={Date.now() + timeEnd}
+            date={timeEnd}
             
           >
             {onTimeEnd}

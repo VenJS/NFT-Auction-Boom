@@ -5,8 +5,8 @@ import Typography from "@mui/material/Typography";
 export default function ProductInfoTitle({ text }) {
   return (
     <div className={classNames(styles["product-info-title"])}>
-      <Typography className={classNames(styles.title)}>
-        <p>{text}</p>
+      <Typography className={classNames(styles.title)} color='primary'>
+        <p>{title}</p>
       </Typography>
     </div>
   );

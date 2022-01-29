@@ -15,11 +15,13 @@ export default function ProductInfoTimer({
           <p className={classNames(styles.title)}>Ends In</p>
           <Countdown
             className={classNames(styles.active)}
-            date={Date.now() + 2500}
+            date={timeEnd}
+            controlled='true'
             onComplete={() => {
               console.log("timer complete");
               return onTimeEnd();
             }}
+            
           >
             {onTimeEnd()}
           </Countdown>

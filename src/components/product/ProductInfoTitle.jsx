@@ -6,7 +6,7 @@ export default function ProductInfoTitle({ text }) {
   return (
     <div className={classNames(styles["product-info-title"])}>
       <Typography className={classNames(styles.title)}>
-        <p>{title}</p>
+        <p>{text}</p>
       </Typography>
     </div>
   );

@@ -17,9 +17,12 @@ export default function ProductInfoTimer({
             className={classNames(styles.active)}
             date={Date.now() + 2500}
             onComplete={() => {
+              console.log("timer complete");
               return onTimeEnd();
             }}
-          ></Countdown>
+          >
+            {onTimeEnd()}
+          </Countdown>
         </div>
       )}
     </div>

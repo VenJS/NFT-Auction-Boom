@@ -3,7 +3,7 @@ import styles from "./ProductInfoTimer.module.scss";
 import Countdown from "react-countdown";
 
 export default function ProductInfoTimer({
-  timeEnd = 0,
+  timeEnd = 5000,
   onTimeEnd = () => <span>Auction ended!</span>,
 }) {
   return (
@@ -15,12 +15,7 @@ export default function ProductInfoTimer({
           <p className={classNames(styles.title)}>Ends In</p>
           <Countdown
             className={classNames(styles.active)}
-            date={timeEnd}
-            controlled='true'
-            onComplete={() => {
-              console.log("timer complete");
-              return onTimeEnd();
-            }}
+            date={Date.now() + timeEnd}
             
           >
             {onTimeEnd()}

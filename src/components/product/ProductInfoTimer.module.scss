@@ -1,3 +1,5 @@
+@use '../../styles/colors.scss';
+
 .product-info-timer {
     display: flex;
     justify-content: center;
@@ -5,4 +7,12 @@
 
 .timer {
     font-weight: bolder;
+}
+
+.title {
+    color: colors.$text_primary;
+}
+
+.active {
+    background-color: colors.$secondary_main;
 }

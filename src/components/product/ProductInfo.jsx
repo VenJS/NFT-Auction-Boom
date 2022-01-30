@@ -19,7 +19,7 @@ export default function ProductInfo({
   likes = "Number",
   onTimeEnd = "Function",
   timeEnd = "Date",
-  isLive = null,
+  isLive = true,
 }) {
   return (
     <div className={classNames(styles["product-info"])}>

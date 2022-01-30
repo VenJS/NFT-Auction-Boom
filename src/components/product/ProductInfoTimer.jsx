@@ -5,7 +5,7 @@ import Countdown from "react-countdown";
 
 export default function ProductInfoTimer({
   timeEnd = '2022-07-30',
-  onTimeEnd 
+  onTimeEnd = () => <span>Ended</span>
 }) {
   return (
     <div className={classNames(styles["product-info-timer"])}>
@@ -17,10 +17,10 @@ export default function ProductInfoTimer({
           <Countdown
             className={classNames(styles.active)}
             date={Date.now() + 5000}
-            
+            children={onTimeEnd()}
             
           >
-            {onTimeEnd}
+            
           </Countdown>
         </div>
       )}

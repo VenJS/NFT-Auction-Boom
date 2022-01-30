@@ -3,3 +3,18 @@
     justify-content: center;
     align-items: center;
 }
+
+.stats {
+    display: flex;
+    justify-content: center;
+}
+
+.visible {
+    display: block !important;
+    visibility: visible !important;
+}
+
+.notVisible {
+    display: none !important;
+    visibility: hidden !important;
+}

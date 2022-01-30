@@ -9,6 +9,7 @@ import ProductInfoTimer from "./ProductInfoTimer";
 import ProductInfoTitle from "./ProductInfoTitle";
 import { Stack } from "@mui/material";
 import { Grid } from "@mui/material";
+import { Visibility } from "@mui/icons-material";
 
 export default function ProductInfo({
   title = "String",
@@ -22,16 +23,22 @@ export default function ProductInfo({
 }) {
   return (
     <div className={classNames(styles["product-info"])}>
-      <Stack spacing={2} direction = 'row' className={classNames(styles.stats)}>
+      <Stack spacing={2} direction="row" className={classNames(styles.stats)}>
         <ProductInfoPrice></ProductInfoPrice>
         <ProductInfoLikes></ProductInfoLikes>
       </Stack>
-      <Grid container spacing={2} >
-        <ProductInfoCreator lg='6'/>
-        <ProductInfoTimer lg='7'/>
+      <Grid container spacing={2} columns={{ md: 10 }}>
+        <Grid item xs={5}><ProductInfoCreator  /></Grid>
+        <Grid item xs={7}><ProductInfoTimer /></Grid>
       </Grid>
       <ProductInfoTitle></ProductInfoTitle>
-      {isLive == null ? null : <ProductInfoStatus></ProductInfoStatus>}
+      {isLive == null ? (
+        <div></div>
+      ) : (
+        <ProductInfoStatus
+          styles='display: block'
+        ></ProductInfoStatus>
+      )}
     </div>
   );
 }

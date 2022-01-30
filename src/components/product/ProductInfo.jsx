@@ -32,12 +32,12 @@ export default function ProductInfo({
         <Grid item xs={7}><ProductInfoTimer /></Grid>
       </Grid>
       <ProductInfoTitle></ProductInfoTitle>
-      {isLive !== null ? (
+      <div>{isLive !== null ? (
         <ProductInfoStatus
         ></ProductInfoStatus>
       ) : (
-        <div>off</div>
-      )}
+        null
+      )}</div>
     </div>
   );
 }

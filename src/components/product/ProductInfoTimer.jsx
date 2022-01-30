@@ -2,10 +2,9 @@ import classNames from "classnames";
 import styles from "./ProductInfoTimer.module.scss";
 import Countdown from "react-countdown";
 
-
 export default function ProductInfoTimer({
-  timeEnd = '2022-07-30',
-  onTimeEnd
+  timeEnd = "2022-07-30",
+  onTimeEnd,
 }) {
   return (
     <div className={classNames(styles["product-info-timer"])}>
@@ -18,10 +17,7 @@ export default function ProductInfoTimer({
             className={classNames(styles.active)}
             date={Date.now() + 5000}
             children={onTimeEnd}
-            
-          >
-            
-          </Countdown>
+          ></Countdown>
         </div>
       )}
     </div>

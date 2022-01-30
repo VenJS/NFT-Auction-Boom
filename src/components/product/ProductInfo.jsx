@@ -36,7 +36,7 @@ export default function ProductInfo({
         <ProductInfoStatus
         ></ProductInfoStatus>
       ) : (
-        null
+        <div>off</div>
       )}
     </div>
   );

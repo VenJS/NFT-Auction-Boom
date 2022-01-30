@@ -19,7 +19,7 @@ export default function ProductInfo({
   likes = "Number",
   onTimeEnd = "Function",
   timeEnd = "Date",
-  isLive = true,
+  isLive = null,
 }) {
   return (
     <div className={classNames(styles["product-info"])}>
@@ -32,12 +32,11 @@ export default function ProductInfo({
         <Grid item xs={7}><ProductInfoTimer /></Grid>
       </Grid>
       <ProductInfoTitle></ProductInfoTitle>
-      {isLive == null ? (
-        <div></div>
-      ) : (
+      {isLive !== null ? (
         <ProductInfoStatus
-          styles='display: block'
         ></ProductInfoStatus>
+      ) : (
+        null
       )}
     </div>
   );

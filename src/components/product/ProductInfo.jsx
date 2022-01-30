@@ -6,6 +6,7 @@ import ProductInfoStatus from "./ProductInfoStatus";
 import ProductInfoLikes from "./ProductInfoLikes";
 import ProductInfoCreator from "./ProductInfoCreator";
 import ProductInfoTimer from "./ProductInfoTimer";
+import ProductInfoTitle from "./ProductInfoTitle";
 import { Stack } from "@mui/material";
 import { Grid } from "@mui/material";
 
@@ -21,15 +22,16 @@ export default function ProductInfo({
 }) {
   return (
     <div className={classNames(styles["product-info"])}>
-      <Stack spacing={2} direction = 'row'>
+      <Stack spacing={2} direction = 'row' className={classNames(styles.stats)}>
         <ProductInfoPrice></ProductInfoPrice>
         <ProductInfoLikes></ProductInfoLikes>
       </Stack>
-      <Grid container>
-        <ProductInfoCreator />
-        <ProductInfoTimer />
+      <Grid container spacing={2} >
+        <ProductInfoCreator lg='6'/>
+        <ProductInfoTimer lg='7'/>
       </Grid>
-      <ProductInfoStatus></ProductInfoStatus>
+      <ProductInfoTitle></ProductInfoTitle>
+      {isLive == null ? null : <ProductInfoStatus></ProductInfoStatus>}
     </div>
   );
 }

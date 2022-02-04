@@ -2,7 +2,7 @@ import classNames from "classnames";
 import styles from "./ProductTabs.module.scss";
 import { TabContext } from "@mui/lab";
 import User from "../user/User";
-import { TableHead, TableRow, Box, Tabs, Tab } from "@mui/material";
+import { TableHead, TableRow, Box, Tabs, Tab, TableCell } from "@mui/material";
 
 export default function ProductTabs({
   text,
@@ -17,10 +17,8 @@ export default function ProductTabs({
   return (
     <div className={classNames(styles["product-tabs"])}>
       <TabContext value="sadsadsa">
-        <User name="Jonny"></User>
-        <User name="Ronny"></User>
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-          <Tabs aria-label={text}>
+          <Tabs aria-label={text} value={text}>
             <Tab
               label="Details"
               className={classNames(styles["tab-details"])}
@@ -28,14 +26,17 @@ export default function ProductTabs({
             <Tab label="Bids" className={classNames(styles["tab-bids"])} />
           </Tabs>
         </Box>
+
+        <TableHead>
+          {[bids].map((bid, i) => {
+            <TableRow className={classNames(styles[`table-row-${i}`])}>
+              <TableCell>
+                <User name="Jonny"></User>
+              </TableCell>
+            </TableRow>;
+          })}
+        </TableHead>
       </TabContext>
-      <TableHead>
-        {[bids].map((bid, i) => {
-          <TableRow
-            className={classNames(styles[`table-row-${i}`])}
-          ></TableRow>;
-        })}
-      </TableHead>
     </div>
   );
 }

@@ -19,11 +19,12 @@ export default function ProductTabs({
       <TabContext value="sadsadsa">
         <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
           <Tabs aria-label={text} value={text}>
-            <Tab
-              label="Details"
-              className={classNames(styles["tab-details"])}
-            />
-            <Tab label="Bids" className={classNames(styles["tab-bids"])} />
+            <Tab label="Details" className={classNames(styles["tab-details"])}>
+              Details
+            </Tab>
+            <Tab label="Bids" className={classNames(styles["tab-bids"])}>
+              Bids
+            </Tab>
           </Tabs>
         </Box>
 

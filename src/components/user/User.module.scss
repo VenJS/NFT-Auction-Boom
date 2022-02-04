@@ -1,24 +1,21 @@
 @use "../../styles/colors";
 
 .name {
-  position: absolute;
-  top: 25%;
-  left: 7%;
   color: colors.$text_primary;
   font-weight: bolder;
   font-size: 1rem;
 }
 
 .info {
-    position: absolute;
-    top: 30%;
-    left: 7%;
-    color: colors.$success_main;
-    font-weight: bold;
-    font-size: 0.9rem;
+  color: colors.$success_main;
+  font-weight: bold;
+  font-size: 0.9rem;
 }
 
 .user {
-    position: relative;
-    color: colors.$info_main;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: colors.$info_main;
 }

@@ -4,7 +4,7 @@ import { TabContext } from "@mui/lab";
 import User from "../user/User";
 import { TableHead, TableRow, Box, Tabs, Tab } from "@mui/material";
 
-export default function ProductTabs(
+export default function ProductTabs({
   text,
   bids = [
     {
@@ -12,8 +12,8 @@ export default function ProductTabs(
       amount: 4,
       date: "String",
     },
-  ]
-) {
+  ],
+}) {
   return (
     <div className={classNames(styles["product-tabs"])}>
       <TabContext value="sadsadsa">

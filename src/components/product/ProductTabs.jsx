@@ -2,8 +2,7 @@ import classNames from "classnames";
 import styles from "./ProductTabs.module.scss";
 import { TabContext } from "@mui/lab";
 import User from "../user/User";
-import { TableHead, TableRow } from "@mui/material";
-import { formatDistance, parseISO } from "date-fns";
+import { TableHead, TableRow, Box, Tabs, Tab } from "@mui/material";
 
 export default function ProductTabs(
   text,
@@ -20,8 +19,15 @@ export default function ProductTabs(
       <TabContext value="sadsadsa">
         <User name="Jonny"></User>
         <User name="Ronny"></User>
-        <div className={classNames(styles["tab-details"])}>Details</div>
-        <div className={classNames(styles["tab-bids"])}>Bids</div>
+        <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+          <Tabs aria-label={text}>
+            <Tab
+              label="Details"
+              className={classNames(styles["tab-details"])}
+            />
+            <Tab label="Bids" className={classNames(styles["tab-bids"])} />
+          </Tabs>
+        </Box>
       </TabContext>
       <TableHead>
         {[bids].map((bid, i) => {

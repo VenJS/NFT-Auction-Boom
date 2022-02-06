@@ -2,42 +2,75 @@ import classNames from "classnames";
 import styles from "./ProductTabs.module.scss";
 import { TabContext } from "@mui/lab";
 import User from "../user/User";
-import { TableHead, TableRow, Box, Tabs, Tab, TableCell } from "@mui/material";
+import { TableRow, Box, Tabs, Tab, TableCell } from "@mui/material";
+import { useState } from "react";
+import formatDistance from "date-fns/formatDistance";
+import parseISO from "date-fns/parseISO";
 
 export default function ProductTabs({
-  text,
+  text = "asdsad",
   bids = [
     {
-      user: { avatar: "String", name: "String", verified: true },
-      amount: 4,
-      date: "String",
+      user: { avatar: "String", name: "Jonny", verified: true },
+      amount: "4 ETH",
+      date: "10 seconds ago",
+    },
+    {
+      user: { avatar: "String", name: "Ronny", verified: true },
+      amount: "1 ETH",
+      date: "20 seconds ago",
     },
   ],
 }) {
+  const [selectedTab, setSelectedTab] = useState();
+
+  const handleChange = (event, newValue) => {
+    console.log(newValue);
+    setSelectedTab(newValue);
+  };
+
   return (
     <div className={classNames(styles["product-tabs"])}>
-      <TabContext value="sadsadsa">
-        <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-          <Tabs aria-label={text} value={text}>
-            <Tab label="Details" className={classNames(styles["tab-details"])}>
-              Details
-            </Tab>
-            <Tab label="Bids" className={classNames(styles["tab-bids"])}>
-              Bids
-            </Tab>
+      <TabContext value="0">
+        <Box sx={{ borderBottom: 3 }}>
+          <Tabs value={selectedTab} onChange={handleChange}>
+            <Tab
+              label="Details"
+              className={classNames(styles["tab-details"])}
+            ></Tab>
+            <Tab label="Bids" className={classNames(styles["tab-bids"])}></Tab>
           </Tabs>
         </Box>
-
-        <TableHead>
-          {[bids].map((bid, i) => {
-            <TableRow className={classNames(styles[`table-row-${i}`])}>
-              <TableCell>
-                <User name="Jonny"></User>
-              </TableCell>
-            </TableRow>;
-          })}
-        </TableHead>
       </TabContext>
+      {bids.map((bid, i) => (
+        <TableRow className={classNames(styles[`table-row-${i}`])}>
+          {i % 2 !== 0 ? (
+            <TableRow className={classNames(styles.light)}>
+              <TableCell className={classNames(styles.name)}>
+                <User name={bid.user.name}></User>
+              </TableCell>
+              <TableCell>
+                <span className={classNames(styles.amount)}>{bid.amount}</span>
+              </TableCell>
+              <TableCell>
+                <span className={classNames(styles.date)}>{bid.date}</span>
+              </TableCell>
+            </TableRow>
+          ) : (
+            <TableRow className={classNames(styles.dark)}>
+              <TableCell className={classNames(styles.name)}>
+                <User name={bid.user.name}></User>
+              </TableCell>
+              <TableCell>
+                <span className={classNames(styles.amount)}>{bid.amount}</span>
+              </TableCell>
+              <TableCell>
+                <span className={classNames(styles.date)}>{bid.date}</span>
+              </TableCell>
+            </TableRow>
+          )}
+        </TableRow>
+      ))}
     </div>
   );
 }

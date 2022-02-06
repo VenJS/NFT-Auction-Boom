@@ -1,5 +1,8 @@
+@use "../../styles/colors.scss";
+
 .product-tabs {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -10,4 +13,30 @@
 
 .tab-bids {
   display: flex;
+}
+
+.table-row-0 {
+  display: flex;
+}
+
+.light {
+  background-color: rgba(colors.$primary_main, 20%);
+}
+
+.dark {
+  background-color: rgba(colors.$background_paper, 80%);
+}
+
+.amount {
+  color: colors.$info_main;
+  font-weight: bolder;
+  font-size: 1rem;
+}
+
+.date {
+  font-style: italic;
+}
+
+.name {
+  padding-right: 200px !important;
 }

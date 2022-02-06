@@ -13,12 +13,12 @@ export default function ProductTabs({
     {
       user: { avatar: "String", name: "Jonny", verified: true },
       amount: "4 ETH",
-      date: "10 seconds ago",
+      date: "2022-02-06T22:18:15",
     },
     {
       user: { avatar: "String", name: "Ronny", verified: true },
       amount: "1 ETH",
-      date: "20 seconds ago",
+      date: "2021-08-11T11:30:30",
     },
   ],
 }) {
@@ -53,7 +53,12 @@ export default function ProductTabs({
                 <span className={classNames(styles.amount)}>{bid.amount}</span>
               </TableCell>
               <TableCell>
-                <span className={classNames(styles.date)}>{bid.date}</span>
+                <span className={classNames(styles.date)}>
+                  {formatDistance(parseISO(bid.date), new Date(), {
+                    includeSeconds: true,
+                  })}{" "}
+                  ago
+                </span>
               </TableCell>
             </TableRow>
           ) : (
@@ -65,7 +70,12 @@ export default function ProductTabs({
                 <span className={classNames(styles.amount)}>{bid.amount}</span>
               </TableCell>
               <TableCell>
-                <span className={classNames(styles.date)}>{bid.date}</span>
+                <span className={classNames(styles.date)}>
+                  {formatDistance(parseISO(bid.date), new Date(), {
+                    includeSeconds: true,
+                  })}{" "}
+                  ago
+                </span>
               </TableCell>
             </TableRow>
           )}

@@ -13,8 +13,8 @@ export default function ProductActions({
 }) {
   return (
     <div className={classNames(styles["product-actions"])}>
-      <Grid container spacing={2} columns={{ md: 10 }}>
-        <Grid item xs={5}>
+      <Grid container spacing={4}>
+        <Grid item xs={7}>
           <Button
             className={classNames(styles.button)}
             disabled={isLive == false ? true : false}
@@ -23,16 +23,16 @@ export default function ProductActions({
             }}
             variant="contained"
           >
-            {onBuy}
+            Buy for {buyAmount} {currency}
           </Button>
         </Grid>
-        <Grid item xs={7}>
+        <Grid item xs={5}>
           <Button
             className={classNames(styles.button)}
             variant="outlined"
             color="success"
           >
-            {onBid}
+            Place bid for {bidAmount} {currency}
           </Button>
         </Grid>
       </Grid>

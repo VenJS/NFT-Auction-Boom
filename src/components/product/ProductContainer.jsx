@@ -25,12 +25,16 @@ export default function ProductContainer({
 }) {
   return (
     <div className={classNames(styles["product-container"])}>
-      <ProductActions></ProductActions>
-      <ProductImage></ProductImage>
-      <div className={classNames(styles["product-details"])}>
-        <ProductInfo creator={owner} title={name}></ProductInfo>
-        <ProductTabs></ProductTabs>
-      </div>
+      <Grid container spacing={4}>
+        <Grid item xs={6}>
+          <ProductImage></ProductImage>
+        </Grid>
+        <Grid item xs={5}>
+          <ProductInfo creator={owner} title={name}></ProductInfo>
+          <ProductTabs></ProductTabs>
+          <ProductActions></ProductActions>
+        </Grid>
+      </Grid>
     </div>
   );
 }

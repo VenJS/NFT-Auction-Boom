@@ -8,7 +8,7 @@ import formatDistance from "date-fns/formatDistance";
 import parseISO from "date-fns/parseISO";
 
 export default function ProductTabs({
-  text = "lorem ipsum",
+  text = "The god Bragi asks where a thundering sound is coming from, and says that the benches of Valhalla are creaking—as if the god Baldr had returned to Valhalla—and that it sounds like the movement of a thousand. Odin responds that Bragi knows well that the sounds are for Eric Bloodaxe, who will soon arrive in Valhalla. Odin tells the heroes Sigmund and Sinfjötli to rise to greet Eric and invite him into the hall, if it is indeed he.Sigmund asks Odin why he would expect Eric more than any other king, to which Odin responds that Eric has reddened his gore-drenched sword with many other lands. Eric arrives, and Sigmund greets him, tells him that he is welcome to come into the hall, and asks him what other lords he has brought with him to Valhalla. Eric says that with him are five kings, that he will tell them the name of them all, and that he, himself, is the sixth.",
   bids = [
     {
       user: { avatar: "String", name: "Jonny", verified: true },
@@ -45,27 +45,35 @@ export default function ProductTabs({
           </Tabs>
         </Box>
       </TabContext>
-      {selectedTab === 0 && <p>{text}</p>}
+      {selectedTab === 0 && <p className={classNames(styles.text)}>{text}</p>}
       {selectedTab === 1 && (
-        <TableRow className={classNames(styles["table-row-0"])}>
+        <table>
           {bids.map((bid, i) => (
-            <div
-              className={
-                i % 2 !== 0 ? classNames(styles.light) : classNames(styles.dark)
-              }
-            >
-              <TableCell className={classNames(styles.name)}>
-                <User name={bid.user.name}></User>
-              </TableCell>
-              <TableCell>
-                <span className={classNames(styles.amount)}>{bid.amount}</span>
-              </TableCell>
-              <TableCell>
-                <span className={classNames(styles.date)}>{bid.date} ago</span>
-              </TableCell>
-            </div>
+            <TableRow className={`table-row-${i}`}>
+              <div
+                className={
+                  i % 2 !== 0
+                    ? classNames(styles.light)
+                    : classNames(styles.dark)
+                }
+              >
+                <TableCell className={classNames(styles.name)}>
+                  <User name={bid.user.name}></User>
+                </TableCell>
+                <TableCell>
+                  <span className={classNames(styles.amount)}>
+                    {bid.amount}
+                  </span>
+                </TableCell>
+                <TableCell>
+                  <span className={classNames(styles.date)}>
+                    {bid.date} ago
+                  </span>
+                </TableCell>
+              </div>
+            </TableRow>
           ))}
-        </TableRow>
+        </table>
       )}
     </div>
   );

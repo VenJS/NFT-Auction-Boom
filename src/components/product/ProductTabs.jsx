@@ -48,7 +48,7 @@ export default function ProductTabs({
       </TabContext>
       <p>{text}</p>
       {bids.map((bid, i) => (
-        <TableRow className={classNames(styles["table-row-${i}"])}>
+        <TableRow className={classNames(styles["table-row-0"])}>
           {i % 2 !== 0 ? (
             <div className={classNames(styles.light)}>
               <TableCell className={classNames(styles.name)}>

@@ -29,7 +29,6 @@ export default function ProductTabs({
   const [selectedTab, setSelectedTab] = useState();
 
   const handleChange = (event, newValue) => {
-    console.log(newValue);
     setSelectedTab(newValue);
   };
 
@@ -46,11 +45,15 @@ export default function ProductTabs({
           </Tabs>
         </Box>
       </TabContext>
-      <p>{text}</p>
-      {bids.map((bid, i) => (
+      {selectedTab === 0 && <p>{text}</p>}
+      {selectedTab === 1 && (
         <TableRow className={classNames(styles["table-row-0"])}>
-          {i % 2 !== 0 ? (
-            <div className={classNames(styles.light)}>
+          {bids.map((bid, i) => (
+            <div
+              className={
+                i % 2 !== 0 ? classNames(styles.light) : classNames(styles.dark)
+              }
+            >
               <TableCell className={classNames(styles.name)}>
                 <User name={bid.user.name}></User>
               </TableCell>
@@ -61,21 +64,9 @@ export default function ProductTabs({
                 <span className={classNames(styles.date)}>{bid.date} ago</span>
               </TableCell>
             </div>
-          ) : (
-            <div className={classNames(styles.dark)}>
-              <TableCell className={classNames(styles.name)}>
-                <User name={bid.user.name}></User>
-              </TableCell>
-              <TableCell>
-                <span className={classNames(styles.amount)}>{bid.amount}</span>
-              </TableCell>
-              <TableCell>
-                <span className={classNames(styles.date)}>{bid.date} ago</span>
-              </TableCell>
-            </div>
-          )}
+          ))}
         </TableRow>
-      ))}
+      )}
     </div>
   );
 }

@@ -8,7 +8,7 @@ import formatDistance from "date-fns/formatDistance";
 import parseISO from "date-fns/parseISO";
 
 export default function ProductTabs({
-  text = "asdsad",
+  text = "lorem ipsum",
   bids = [
     {
       user: { avatar: "String", name: "Jonny", verified: true },
@@ -46,8 +46,9 @@ export default function ProductTabs({
           </Tabs>
         </Box>
       </TabContext>
+      <p>{text}</p>
       {bids.map((bid, i) => (
-        <TableRow className="table-row-i">
+        <TableRow className={classNames(styles["table-row-${i}"])}>
           {i % 2 !== 0 ? (
             <div className={classNames(styles.light)}>
               <TableCell className={classNames(styles.name)}>

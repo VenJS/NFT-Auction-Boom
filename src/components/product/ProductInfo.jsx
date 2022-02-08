@@ -26,10 +26,10 @@ export default function ProductInfo({
       <Stack spacing={2} direction="row" className={classNames(styles.stats)}>
         <ProductInfoPrice amount={price} currency={currency}></ProductInfoPrice>
         <div className={classNames(styles.badge)}>
-          <div className={classNames(styles.icon)}>
-            <FiberManualRecordIcon></FiberManualRecordIcon>
-            <span>LIVE</span>
+          <div>
+            {isLive !== null ? <ProductInfoStatus></ProductInfoStatus> : null}
           </div>
+
           <ProductInfoLikes
             amount={likes}
             className={classNames(styles.likes)}
@@ -37,17 +37,13 @@ export default function ProductInfo({
         </div>
       </Stack>
       <Grid container spacing={{ xs: 16 }}>
-        <Grid item xs={5}>
+        <Grid item xs={7}>
           <ProductInfoCreator name={creator} />
         </Grid>
-        <Grid item xs={7}>
+        <Grid item xs={5}>
           <ProductInfoTimer />
         </Grid>
       </Grid>
-
-      <div>
-        {isLive !== null ? <ProductInfoStatus></ProductInfoStatus> : null}
-      </div>
     </div>
   );
 }

@@ -1,8 +1,27 @@
+@use "../../styles/colors";
+
 .status {
-    display: flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: colors.$background_default !important;
 }
 
 .product-info-status {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid;
+  border-radius: 10px;
+  background-color: colors.$success_main;
+  color: colors.$background_default;
+  font-size: 13px;
+  font-weight: bold;
+  height: 35px;
+  width: 75px;
+  margin-right: 25px;
+}
+
+.icon {
+  color: colors.$background_default !important;
 }

@@ -15,6 +15,12 @@
   display: flex;
 }
 
+.table-row-0,
+.table-row-1 {
+  display: flex;
+  width: 650px;
+}
+
 .light {
   background-color: rgba(colors.$primary_main, 20%);
 }

@@ -1,16 +1,27 @@
-@use '../../styles/colors.scss';
+@use "../../styles/colors.scss";
 
 .product-info-creator {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(colors.$background_paper, 80%);
+  width: 300px;
+  border-radius: 20px;
 }
 
 .user-container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
 }
 
 .title {
-    font-weight: bolder;
-    color: colors.$info_main;
+  font-weight: bolder;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  background-color: rgba(colors.$primary_main, 20%);
+  width: 100%;
+  padding-left: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }

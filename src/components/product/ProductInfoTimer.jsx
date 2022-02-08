@@ -8,14 +8,14 @@ export default function ProductInfoTimer({
 }) {
   return (
     <div className={classNames(styles["product-info-timer"])}>
+      <div className={classNames(styles.title)}>ENDS IN</div>
       {timeEnd == null ? (
         <div className={classNames(styles.timer)}></div>
       ) : (
         <div className={classNames(styles.timer)}>
-          <p className={classNames(styles.title)}>Ends In {timeEnd}</p>
           <Countdown
             className={classNames(styles.active)}
-            date={Date.now() + 5000}
+            date={Date.now() + 500000}
             children={onTimeEnd}
           ></Countdown>
         </div>

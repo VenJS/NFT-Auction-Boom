@@ -47,9 +47,9 @@ export default function ProductTabs({
         </Box>
       </TabContext>
       {bids.map((bid, i) => (
-        <TableRow className={classNames(styles[`table-row-${i}`])}>
+        <TableRow className="table-row-${i}">
           {i % 2 !== 0 ? (
-            <TableRow className={classNames(styles.light)}>
+            <div className={classNames(styles.light)}>
               <TableCell className={classNames(styles.name)}>
                 <User name={bid.user.name}></User>
               </TableCell>
@@ -59,9 +59,9 @@ export default function ProductTabs({
               <TableCell>
                 <span className={classNames(styles.date)}>{bid.date} ago</span>
               </TableCell>
-            </TableRow>
+            </div>
           ) : (
-            <TableRow className={classNames(styles.dark)}>
+            <div className={classNames(styles.dark)}>
               <TableCell className={classNames(styles.name)}>
                 <User name={bid.user.name}></User>
               </TableCell>
@@ -71,7 +71,7 @@ export default function ProductTabs({
               <TableCell>
                 <span className={classNames(styles.date)}>{bid.date} ago</span>
               </TableCell>
-            </TableRow>
+            </div>
           )}
         </TableRow>
       ))}

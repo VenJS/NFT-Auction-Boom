@@ -1,7 +1,16 @@
+@use "../../styles/colors";
+
 .product-info-likes {
-    display: flex;
+  display: flex;
 }
 
 .likes {
-    display: flex;
+  display: flex;
+  color: colors.$secondary_main !important;
+  border: 1px solid !important;
+  width: 100px;
+}
+
+.icon {
+  color: colors.$secondary_main !important;
 }

@@ -1,9 +1,12 @@
 .product-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 50px;
 }
 
 .image {
-    width: 200px;
+  width: 600px;
+  height: 800px;
+  border-radius: 20px;
 }

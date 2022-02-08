@@ -1,20 +1,45 @@
+@use "../../styles/colors";
+
 .product-info {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 100px;
 }
 
 .stats {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .visible {
-    display: block !important;
-    visibility: visible !important;
+  display: block !important;
+  visibility: visible !important;
 }
 
 .notVisible {
-    display: none !important;
-    visibility: hidden !important;
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid;
+  border-radius: 10px;
+  background-color: colors.$success_main;
+  color: colors.$background_default;
+  font-size: 13px;
+  font-weight: bold;
+  height: 35px;
+  width: 75px;
+  margin-right: 25px;
 }

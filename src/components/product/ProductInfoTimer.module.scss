@@ -1,18 +1,34 @@
 @use "../../styles/colors.scss";
 
 .product-info-timer {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  background-color: colors.$secondary_main;
+  color: colors.$background_paper;
+  border-radius: 20px;
+  height: 117.2px;
 }
 
 .timer {
-    font-weight: bolder;
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bolder;
+  padding-top: 15px;
 }
 
 .title {
-    color: colors.$text_hint;
+  width: 100%;
+  background-color: rgba(colors.$success_main, 90%);
+  text-align: center;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  font-weight: bolder;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .active {
-    background-color: colors.$secondary_main;
+  background-color: colors.$secondary_main;
 }

@@ -1,10 +1,10 @@
 import classNames from "classnames";
 import styles from "./ProductContainer.module.scss";
 import Grid from "@mui/material/Grid";
-import ProductActions from "./ProductActions";
-import ProductImage from "./ProductImage";
-import ProductInfo from "./ProductInfo";
-import ProductTabs from "./ProductTabs";
+import ProductActions from "../ProductActions/ProductActions";
+import ProductImage from "../ProductImage/ProductImage";
+import ProductInfo from "../ProductInfo/ProductInfo";
+import ProductTabs from "../ProductTabs/ProductTabs";
 
 export default function ProductContainer({
   name = "Gentleman from Valhalla",

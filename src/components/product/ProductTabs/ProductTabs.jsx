@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import styles from "./ProductTabs.module.scss";
 import { TabContext } from "@mui/lab";
-import User from "../user/User";
+import User from "../../user/User";
 import { TableRow, Box, Tabs, Tab, TableCell } from "@mui/material";
 import { useState } from "react";
 import formatDistance from "date-fns/formatDistance";

@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import styles from "./ProductContainer.module.scss";
-import { Grid } from "@mui/material";
+import Grid from "@mui/material/Grid";
 import ProductActions from "./ProductActions";
 import ProductImage from "./ProductImage";
 import ProductInfo from "./ProductInfo";
@@ -19,7 +19,6 @@ export default function ProductContainer({
 }) {
   return (
     <div className={classNames(styles["product-container"])}>
-      ProductContainer
       <Grid container spacing={1}>
         <Grid item xs={6}>
           <ProductImage url="https://miro.medium.com/max/1000/1*jKnY9OzEhllkSjq_W7zFbg.png"></ProductImage>

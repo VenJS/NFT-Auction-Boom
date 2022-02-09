@@ -12,7 +12,7 @@ import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 
 export default function ProductInfo({
   title = "String",
-  creator = "String",
+  creator = { name: "String" },
   price,
   currency,
   likes,

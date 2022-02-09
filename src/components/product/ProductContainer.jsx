@@ -18,7 +18,7 @@ export default function ProductContainer({
   source,
 }) {
   return (
-    <div className="product-container">
+    <div className={classNames(styles["product-container"])}>
       <Grid container spacing={4}>
         <Grid item xs={6}>
           <ProductImage url="https://miro.medium.com/max/1000/1*jKnY9OzEhllkSjq_W7zFbg.png"></ProductImage>

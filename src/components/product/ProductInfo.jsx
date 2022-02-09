@@ -12,7 +12,7 @@ import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 
 export default function ProductInfo({
   title = "String",
-  creator = "String",
+  creator = { name: "String" },
   price,
   currency,
   likes,
@@ -38,7 +38,7 @@ export default function ProductInfo({
       </Stack>
       <Grid container spacing={{ xs: 16 }}>
         <Grid item xs={7}>
-          <ProductInfoCreator name={creator} />
+          <ProductInfoCreator name={creator.name} />
         </Grid>
         <Grid item xs={5}>
           <ProductInfoTimer />

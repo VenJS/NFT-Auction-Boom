@@ -47,7 +47,7 @@ export default function ProductTabs({
       </TabContext>
       {selectedTab === 0 && <p className={classNames(styles.text)}>{text}</p>}
       {selectedTab === 1 && (
-        <table>
+        <table className={classNames(styles.table)}>
           {bids.map((bid, i) => (
             <TableRow className={`table-row-${i}`}>
               <div

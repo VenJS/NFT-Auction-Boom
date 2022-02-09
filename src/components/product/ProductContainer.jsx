@@ -18,12 +18,12 @@ export default function ProductContainer({
   source,
 }) {
   return (
-    <div className={classNames(styles["product-container"])}>
-      <Grid container spacing={4}>
+    <Grid container spacing={{ xs: 2 }}>
+      <div className={classNames(styles["product-container"])}>
         <Grid item xs={6}>
           <ProductImage url="https://miro.medium.com/max/1000/1*jKnY9OzEhllkSjq_W7zFbg.png"></ProductImage>
         </Grid>
-        <Grid item xs={5}>
+        <Grid item xs={5} className={classNames(styles["grid-container"])}>
           <ProductInfo
             creator={owner}
             title={name}
@@ -50,7 +50,7 @@ export default function ProductContainer({
             bids={bids}
           ></ProductActions>
         </Grid>
-      </Grid>
-    </div>
+      </div>
+    </Grid>
   );
 }

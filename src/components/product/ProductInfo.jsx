@@ -13,12 +13,12 @@ import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 export default function ProductInfo({
   title = "String",
   creator = "String",
-  price = 25,
-  currency = "LTC",
-  likes = 250,
-  onTimeEnd = "Function",
-  timeEnd = "Date",
-  isLive = true,
+  price,
+  currency,
+  likes,
+  onTimeEnd,
+  timeEnd,
+  isLive,
 }) {
   return (
     <div className={classNames(styles["product-info"])}>

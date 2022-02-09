@@ -4,12 +4,14 @@ import classNames from "classnames";
 import styles from "./ProductActions.module.scss";
 
 export default function ProductActions({
-  isLive = true,
-  currency = "ETH",
-  buyAmount = 12,
-  bidAmount = 4,
+  isLive,
+  currency,
+  buyAmount,
+  bidAmount,
   onBuy,
   onBid,
+  text,
+  bids,
 }) {
   return (
     <div className={classNames(styles["product-actions"])}>
@@ -18,9 +20,7 @@ export default function ProductActions({
           <Button
             className={classNames(styles.button)}
             disabled={isLive == false ? true : false}
-            onClick={() => {
-              alert("clicked");
-            }}
+            onClick={onBuy}
             variant="contained"
           >
             Buy for {buyAmount} {currency}
@@ -31,6 +31,8 @@ export default function ProductActions({
             className={classNames(styles.button)}
             variant="outlined"
             color="success"
+            disabled={isLive == false ? true : false}
+            onClick={onBid}
           >
             Place bid for {bidAmount} {currency}
           </Button>

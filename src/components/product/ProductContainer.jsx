@@ -1,15 +1,9 @@
 import classNames from "classnames";
-import styles from "../product/ProductTabs.module.scss";
+import styles from "./ProductContainer.module.scss";
 import { Grid } from "@mui/material";
 import ProductActions from "./ProductActions";
 import ProductImage from "./ProductImage";
 import ProductInfo from "./ProductInfo";
-import ProductInfoCreator from "./ProductInfoCreator";
-import ProductInfoLikes from "./ProductInfoLikes";
-import ProductInfoPrice from "./ProductInfoPrice";
-import ProductInfoStatus from "./ProductInfoStatus";
-import ProductInfoTimer from "./ProductInfoTimer";
-import ProductInfoTitle from "./ProductInfoTitle";
 import ProductTabs from "./ProductTabs";
 
 export default function ProductContainer({
@@ -27,12 +21,34 @@ export default function ProductContainer({
     <div className={classNames(styles["product-container"])}>
       <Grid container spacing={4}>
         <Grid item xs={6}>
-          <ProductImage></ProductImage>
+          <ProductImage url="https://miro.medium.com/max/1000/1*jKnY9OzEhllkSjq_W7zFbg.png"></ProductImage>
         </Grid>
         <Grid item xs={5}>
-          <ProductInfo creator={owner} title={name}></ProductInfo>
+          <ProductInfo
+            creator={owner}
+            title={name}
+            price={25}
+            currency="LTC"
+            likes={250}
+            timeEnd="Date"
+            isLive={true}
+            onTimeEnd="Function"
+          ></ProductInfo>
           <ProductTabs></ProductTabs>
-          <ProductActions></ProductActions>
+          <ProductActions
+            isLive={true}
+            currency="ETH"
+            buyAmount="12"
+            bidAmount={3}
+            onBuy={() => {
+              alert("Bought! Congratulations!");
+            }}
+            onBid={() => {
+              alert("Bid!");
+            }}
+            text="blalbal"
+            bids={5}
+          ></ProductActions>
         </Grid>
       </Grid>
     </div>

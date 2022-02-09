@@ -1,11 +1,9 @@
 import classNames from "classnames";
 import styles from "./ProductImage.module.scss";
 
-export default function ProductImage({
-  url = "https://miro.medium.com/max/1000/1*jKnY9OzEhllkSjq_W7zFbg.png"
-}) {
+export default function ProductImage({ url }) {
   return (
-    <div className={classNames(styles['product-image'])}>
+    <div className={classNames(styles["product-image"])}>
       <img className={classNames(styles.image)} src={url} />
     </div>
   );

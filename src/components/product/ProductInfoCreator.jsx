@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import styles from "./ProductInfoCreator.module.scss";
-import User from "../../user/User";
+import User from "../user/User";
 
 export default function ProductInfoCreator({
   name = "String",

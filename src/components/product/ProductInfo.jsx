@@ -1,11 +1,11 @@
 import classNames from "classnames";
 import styles from "./ProductInfo.module.scss";
-import ProductInfoPrice from "../ProductInfoPrice/ProductInfoPrice";
-import ProductInfoStatus from "../ProductInfoStatus/ProductInfoStatus";
-import ProductInfoLikes from "../ProductInfoLikes/ProductInfoLikes";
-import ProductInfoCreator from "../ProductInfoCreator/ProductInfoCreator";
-import ProductInfoTimer from "../ProductInfoTimer/ProductInfoTimer";
-import ProductInfoTitle from "../ProductInfoTitle/ProductInfoTitle";
+import ProductInfoPrice from "./ProductInfoPrice";
+import ProductInfoStatus from "./ProductInfoStatus";
+import ProductInfoLikes from "./ProductInfoLikes";
+import ProductInfoCreator from "./ProductInfoCreator";
+import ProductInfoTimer from "./ProductInfoTimer";
+import ProductInfoTitle from "./ProductInfoTitle";
 import { Stack } from "@mui/material";
 import { Grid } from "@mui/material";
 

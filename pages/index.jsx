@@ -11,7 +11,7 @@ import dataNfts from "../data/nfts.json";
 import dataProfile from "../data/profile.json";
 import dataTrending from "../data/trending.json";
 import dataUsers from "../data/users.json";
-import ProductContainer from "../src/components/product/ProductContainer/ProductContainer";
+import ProductContainer from "../src/components/product/ProductContainer";
 
 export default function Index() {
   return (

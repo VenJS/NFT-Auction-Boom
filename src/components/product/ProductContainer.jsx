@@ -18,44 +18,41 @@ export default function ProductContainer({
   source,
 }) {
   return (
-    <div className={classNames(styles["product-container"])}>
-      <Grid container spacing={1}>
-        <Grid item xs={6} md={6}>
-          <ProductImage url="https://miro.medium.com/max/1000/1*jKnY9OzEhllkSjq_W7zFbg.png"></ProductImage>
-        </Grid>
-        <Grid
-          item
-          xs={5}
-          md={5}
-          className={classNames(styles["grid-container"])}
-        >
-          <ProductInfo
-            creator={owner}
-            title={name}
-            price={price}
-            currency={currency}
-            likes={likes}
-            timeEnd={source}
-            isLive={true}
-            onTimeEnd={auction_end}
-          ></ProductInfo>
-          <ProductTabs></ProductTabs>
-          <ProductActions
-            isLive={true}
-            currency="ETH"
-            buyAmount="12"
-            bidAmount={3}
-            onBuy={() => {
-              alert("Bought! Congratulations!");
-            }}
-            onBid={() => {
-              alert("Bid!");
-            }}
-            text={details}
-            bids={bids}
-          ></ProductActions>
-        </Grid>
+    <Grid
+      container
+      spacing={1}
+      className={classNames(styles["product-container"])}
+    >
+      <Grid item xs={6} md={6}>
+        <ProductImage url="https://miro.medium.com/max/1000/1*jKnY9OzEhllkSjq_W7zFbg.png"></ProductImage>
       </Grid>
-    </div>
+      <Grid item xs={5} md={5} className={classNames(styles["grid-container"])}>
+        <ProductInfo
+          creator={owner}
+          title={name}
+          price={price}
+          currency={currency}
+          likes={likes}
+          timeEnd={source}
+          isLive={true}
+          onTimeEnd={auction_end}
+        ></ProductInfo>
+        <ProductTabs></ProductTabs>
+        <ProductActions
+          isLive={true}
+          currency="ETH"
+          buyAmount="12"
+          bidAmount={3}
+          onBuy={() => {
+            alert("Bought! Congratulations!");
+          }}
+          onBid={() => {
+            alert("Bid!");
+          }}
+          text={details}
+          bids={bids}
+        ></ProductActions>
+      </Grid>
+    </Grid>
   );
 }

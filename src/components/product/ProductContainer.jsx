@@ -9,12 +9,12 @@ import ProductTabs from "./ProductTabs";
 export default function ProductContainer({
   name = "Gentleman from Valhalla",
   owner = "Murphy",
-  price,
-  currency,
-  likes,
+  price = 25,
+  currency = "LTC",
+  likes = 250,
   auction_end,
-  details,
-  bids,
+  details = "blalbal",
+  bids = 5,
   source,
 }) {
   return (
@@ -27,12 +27,12 @@ export default function ProductContainer({
           <ProductInfo
             creator={owner}
             title={name}
-            price={25}
-            currency="LTC"
-            likes={250}
-            timeEnd="Date"
+            price={price}
+            currency={currency}
+            likes={likes}
+            timeEnd={source}
             isLive={true}
-            onTimeEnd="Function"
+            onTimeEnd={auction_end}
           ></ProductInfo>
           <ProductTabs></ProductTabs>
           <ProductActions
@@ -46,8 +46,8 @@ export default function ProductContainer({
             onBid={() => {
               alert("Bid!");
             }}
-            text="blalbal"
-            bids={5}
+            text={details}
+            bids={bids}
           ></ProductActions>
         </Grid>
       </Grid>

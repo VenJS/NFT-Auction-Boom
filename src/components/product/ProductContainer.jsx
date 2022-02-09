@@ -13,8 +13,8 @@ export default function ProductContainer({
   currency = "LTC",
   likes = 250,
   auction_end,
-  details = "blalbal",
-  bids = 5,
+  details = "for",
+  bids = 1,
   source,
 }) {
   return (

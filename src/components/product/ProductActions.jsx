@@ -23,7 +23,7 @@ export default function ProductActions({
             onClick={onBuy}
             variant="contained"
           >
-            Buy for {buyAmount} {currency}
+            Buy {text} {buyAmount} {currency}
           </Button>
         </Grid>
         <Grid item xs={5}>
@@ -34,7 +34,7 @@ export default function ProductActions({
             disabled={isLive == false ? true : false}
             onClick={onBid}
           >
-            Place bid for {bidAmount} {currency}
+            Place {bids} bid {text} {bidAmount} {currency}
           </Button>
         </Grid>
       </Grid>

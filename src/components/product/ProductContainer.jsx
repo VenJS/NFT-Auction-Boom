@@ -13,8 +13,8 @@ export default function ProductContainer({
   currency = "LTC",
   likes = 250,
   auction_end,
-  details = "for",
-  bids = 1,
+  details = "The god Bragi asks where a thundering sound is coming from, and says that the benches of Valhalla are creaking—as if the god Baldr had returned to Valhalla—and that it sounds like the movement of a thousand. Odin responds that Bragi knows well that the sounds are for Eric Bloodaxe, who will soon arrive in Valhalla. Odin tells the heroes Sigmund and Sinfjötli to rise to greet Eric and invite him into the hall, if it is indeed he.Sigmund asks Odin why he would expect Eric more than any other king, to which Odin responds that Eric has reddened his gore-drenched sword with many other lands. Eric arrives, and Sigmund greets him, tells him that he is welcome to come into the hall, and asks him what other lords he has brought with him to Valhalla. Eric says that with him are five kings, that he will tell them the name of them all, and that he, himself, is the sixth.",
+  bids,
   source,
 }) {
   return (
@@ -34,7 +34,7 @@ export default function ProductContainer({
             isLive={true}
             onTimeEnd={auction_end}
           ></ProductInfo>
-          <ProductTabs></ProductTabs>
+          <ProductTabs text={details} bids={bids}></ProductTabs>
           <ProductActions
             isLive={true}
             currency="ETH"
@@ -46,8 +46,6 @@ export default function ProductContainer({
             onBid={() => {
               alert("Bid!");
             }}
-            text={details}
-            bids={bids}
           ></ProductActions>
         </Grid>
       </Grid>

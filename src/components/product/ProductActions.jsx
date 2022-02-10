@@ -10,8 +10,6 @@ export default function ProductActions({
   bidAmount,
   onBuy,
   onBid,
-  text,
-  bids,
 }) {
   return (
     <div className={classNames(styles["product-actions"])}>
@@ -23,7 +21,7 @@ export default function ProductActions({
             onClick={onBuy}
             variant="contained"
           >
-            Buy {text} {buyAmount} {currency}
+            Buy for {buyAmount} {currency}
           </Button>
         </Grid>
         <Grid item xs={5}>
@@ -34,7 +32,7 @@ export default function ProductActions({
             disabled={isLive == false ? true : false}
             onClick={onBid}
           >
-            Place {bids} bid {text} {bidAmount} {currency}
+            Place bid for {bidAmount} {currency}
           </Button>
         </Grid>
       </Grid>

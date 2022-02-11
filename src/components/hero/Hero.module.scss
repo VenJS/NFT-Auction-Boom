@@ -1,9 +1,14 @@
 @use '../../styles/colors.scss';
 
 .hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: colors.$primary_main;
+    height: 300px;
+    
 }
 
 .text {
-    text-align: center;
+    color: colors.$text_primary !important;
 }

@@ -1,14 +1,22 @@
 @use '../../styles/colors.scss';
 
 .description {
-    display: flex;
-    justify-content: center;
+    background-color: colors.$background_paper;
+    width: 500px;
+    position: relative;
+    bottom: 100px;
+    padding: 50px;
+    margin: auto;
+    align-content: center;
 }
 
 .text {
-    color: colors.$info_main;
+    color: colors.$text_secondary;
+    margin-bottom: 25px !important;
 }
 
 .image {
-    width: 80%;
+    width: 60%;
+    height: 250px;
+    
 }

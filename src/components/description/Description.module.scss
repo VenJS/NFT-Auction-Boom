@@ -1,0 +1,10 @@
+@use '../../styles/colors.scss';
+
+.description {
+    display: flex;
+    justify-content: center;
+}
+
+.text {
+    color: colors.$info_main;
+}

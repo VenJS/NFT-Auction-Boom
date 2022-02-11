@@ -2,7 +2,7 @@ import classNames from "classnames"
 import styles from '../hero/Hero.module.scss'
 import { Typography } from "@mui/material"
 
-export default function Hero({text = 'asdsa'}) {
+export default function Hero({text}) {
     return (
         <div className={classNames(styles.hero)}>
            <Typography className={classNames(styles.text)} variant='h1'>{text}</Typography> 

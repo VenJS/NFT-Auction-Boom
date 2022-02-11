@@ -11,6 +11,7 @@ import dataProfile from "../data/profile.json";
 import dataTrending from "../data/trending.json";
 import dataUsers from "../data/users.json";
 import Hero from "../src/components/hero/Hero";
+import Description from "../src/components/description/Description";
 
 export default function Index() {
   return (
@@ -99,6 +100,7 @@ export default function Index() {
       <Auctions cards={["BTC", "Kusama", "Tron", "PolkaDot"]}></Auctions>
       <Footer></Footer>
       <Hero></Hero>
+      <Description></Description>
     </div>
   );
 }

@@ -7,7 +7,7 @@ export default function ProfileUser({name,info,avatar,verified}) {
     return (
         <div className={classNames(styles['profile-user'])}>
             <Avatar></Avatar>
-            <Typography variant="h3">{text}</Typography>
+            <Typography variant="h3">{name}</Typography>
             <Typography variant="body1">{info}</Typography>
         </div>
     )

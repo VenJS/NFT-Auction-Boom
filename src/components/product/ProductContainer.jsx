@@ -5,6 +5,8 @@ import ProductActions from "./ProductActions";
 import ProductImage from "./ProductImage";
 import ProductInfo from "./ProductInfo";
 import ProductTabs from "./ProductTabs";
+import { useRouter } from 'next/router'
+
 
 export default function ProductContainer({
   name = "Gentleman from Valhalla",
@@ -17,6 +19,10 @@ export default function ProductContainer({
   bids,
   source,
 }) {
+
+  const router = useRouter();
+  console.log(router.query);
+
   return (
     <div className={classNames(styles["product-container"])}>
       <Grid container spacing={1}>

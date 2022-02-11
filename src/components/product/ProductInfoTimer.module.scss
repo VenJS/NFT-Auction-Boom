@@ -3,7 +3,7 @@
 .product-info-timer {
   display: flex;
   flex-direction: column;
-
+  
   align-items: center;
   background-color: colors.$secondary_main;
   color: colors.$background_paper;
@@ -17,9 +17,11 @@
   font-size: 1.5rem;
   font-weight: bolder;
   padding-top: 15px;
+  
 }
 
 .title {
+  
   width: 100%;
   background-color: rgba(colors.$success_main, 90%);
   text-align: center;

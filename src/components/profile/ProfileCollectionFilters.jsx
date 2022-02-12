@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import Search from "@mui/icons-material/Search";
 
-export default function ProfileCollectionFilters() {
+export default function ProfileCollectionFilters({filters}) {
   return (
     <div className={classNames(styles["profile-collection-filters"])}>
       Explore

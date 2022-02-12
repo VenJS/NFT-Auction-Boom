@@ -9,7 +9,7 @@ import User from "../user/User";
 
 export default function ProfileCollection({
   user = { name: "J", info: "someInfo" },
-  filter = "name",
+  filters = "name",
   items = [
     {
       name: "String",
@@ -57,11 +57,11 @@ export default function ProfileCollection({
           <Typography variant="h3">Collection</Typography>
         </Grid>
         <Grid item xs={9}>
-          <ProfileCollectionFilters filters={filter}></ProfileCollectionFilters>
+          <ProfileCollectionFilters filters={filters}></ProfileCollectionFilters>
         </Grid>
       </Grid>
-      <Grid container>
-        <Grid item xs={3}>
+      <Grid container spacing={4} >
+        <Grid item xs={3} className={classNames(styles['card-wrapper'])}>
           {items.map((item, i) => {
             return (
               <Card

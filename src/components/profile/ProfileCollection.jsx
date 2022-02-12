@@ -1,62 +1,83 @@
 import classNames from "classnames";
-import styles from './ProfileCollection.module.scss';
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
+import styles from "./ProfileCollection.module.scss";
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
 import { Typography } from "@mui/material";
-import ProfileCollectionFilters from './ProfileCollectionFilters';
-import Card from '../card/Card'
-import User from '../user/User'
+import ProfileCollectionFilters from "./ProfileCollectionFilters";
+import Card from "../card/Card";
+import User from "../user/User";
 
-export default function ProfileCollection({user = {name: 'J', info: 'someInfo'}, filter, items = [{
-    name: "String",
-    likes: 0,
-    user: 'Jonny',
-    mediaUrl: "images/nft.jpg", 
-    timeLeft: 100000000,
-    price: "~12.2",
-    currency: "BTC",
-  },
-  {
-    name: "String",
-    likes: 0,
-    user: 'Ronny',
-    mediaUrl: "images/nft.jpg", 
-    timeLeft: 100000000,
-    price: "~12.2",
-    currency: "ETH",
-  },
-  {
-    name: "String",
-    likes: 0,
-    user: 'Tom',
-    mediaUrl: "images/nft.jpg", 
-    timeLeft: 100000000,
-    price: "~12.2",
-    currency: "LTC",
-  },
-  {
-    name: "String",
-    likes: 0,
-    user: 'Mike',
-    mediaUrl: "images/nft.jpg", 
-    timeLeft: 100000000,
-    price: "~12.2",
-    currency: "BNB",
-  }]}) {
-    return (
-        <div className={classNames(styles['profile-collection'])}>
-            <User name={user.name} info={user.info}></User>
-            <Grid container>
-                <Grid item xs={3}><Typography variant="h3">Collection</Typography></Grid>
-                <Grid item xs={9}><ProfileCollectionFilters filters={filter}></ProfileCollectionFilters></Grid>
-            </Grid>
-            <Grid container>
-                <Grid item xs={3}><Card user={items[0].user} currency={items[0].currency}></Card></Grid>
-                <Grid item xs={3}><Card user={items[1].user} currency={items[1].currency}></Card></Grid>
-                <Grid item xs={3}><Card user={items[2].user} currency={items[2].currency}></Card></Grid>
-                <Grid item xs={3}><Card user={items[3].user} currency={items[3].currency}></Card></Grid>
-                
-            </Grid>
-        </div>
-    )
+export default function ProfileCollection({
+  user = { name: "J", info: "someInfo" },
+  filter = "name",
+  items = [
+    {
+      name: "String",
+      likes: 0,
+      user: "Jonny",
+      mediaUrl: "images/nft.jpg",
+      timeLeft: 100000000,
+      price: "~12.2",
+      currency: "BTC",
+    },
+    {
+      name: "String",
+      likes: 0,
+      user: "Ronny",
+      mediaUrl: "images/nft.jpg",
+      timeLeft: 100000000,
+      price: "~12.2",
+      currency: "ETH",
+    },
+    {
+      name: "String",
+      likes: 0,
+      user: "Tom",
+      mediaUrl: "images/nft.jpg",
+      timeLeft: 100000000,
+      price: "~12.2",
+      currency: "LTC",
+    },
+    {
+      name: "String",
+      likes: 0,
+      user: "Mike",
+      mediaUrl: "images/nft.jpg",
+      timeLeft: 100000000,
+      price: "~12.2",
+      currency: "BNB",
+    },
+  ],
+}) {
+  return (
+    <div className={classNames(styles["profile-collection"])}>
+      <User name={user.name} info={user.info}></User>
+      <Grid container>
+        <Grid item xs={3}>
+          <Typography variant="h3">Collection</Typography>
+        </Grid>
+        <Grid item xs={9}>
+          <ProfileCollectionFilters filters={filter}></ProfileCollectionFilters>
+        </Grid>
+      </Grid>
+      <Grid container>
+        <Grid item xs={3}>
+          {items.map((item, i) => {
+            return (
+              <Card
+                key={i}
+                name={item.name}
+                likes={item.likes}
+                user={item.user}
+                mediaUrl={item.mediaUrl}
+                timeLeft={item.timeLeft}
+                price={item.price}
+                currency={item.currency}
+              ></Card>
+            );
+          })}
+        </Grid>
+      </Grid>
+    </div>
+  );
 }

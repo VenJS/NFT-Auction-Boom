@@ -5,8 +5,9 @@ import Grid from '@mui/material/Grid';
 import { Typography } from "@mui/material";
 import ProfileCollectionFilters from './ProfileCollectionFilters';
 import Card from '../card/Card'
+import User from '../user/User'
 
-export default function ProfileCollection({user, filter, items = [{
+export default function ProfileCollection({user = {name: 'J', info: 'someInfo'}, filter, items = [{
     name: "String",
     likes: 0,
     user: 'Jonny',
@@ -44,9 +45,10 @@ export default function ProfileCollection({user, filter, items = [{
   }]}) {
     return (
         <div className={classNames(styles['profile-collection'])}>
+            <User name={user.name} info={user.info}></User>
             <Grid container>
                 <Grid item xs={3}><Typography variant="h3">Collection</Typography></Grid>
-                <Grid item xs={9}><ProfileCollectionFilters></ProfileCollectionFilters></Grid>
+                <Grid item xs={9}><ProfileCollectionFilters filters={filter}></ProfileCollectionFilters></Grid>
             </Grid>
             <Grid container>
                 <Grid item xs={3}><Card user={items[0].user} currency={items[0].currency}></Card></Grid>

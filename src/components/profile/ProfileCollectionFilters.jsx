@@ -19,10 +19,8 @@ export default function ProfileCollectionFilters({filters}) {
         <Select
           autoWidth="true"
           label="Sort by"
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
         >
-          <InputLabel>Name</InputLabel>
+          <InputLabel>{filters}</InputLabel>
         </Select>
       </FormControl>
       <FormControl className={classNames(styles["price-range"])}>

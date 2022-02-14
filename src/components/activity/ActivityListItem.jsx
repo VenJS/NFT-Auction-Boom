@@ -5,7 +5,7 @@ import Link from "../link/Link";
 import { formatDistance, parseISO } from "date-fns";
 
 export default function ActivityListItem({
-  created_at = "Date",
+  created_at = "2022-02-06T22:18:15",
   user = {
     avatar: {
       url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfkXX6ehXfa-zzSjkEQjne-NTk9Qkh2HtqXQ&usqp=CAU",
@@ -30,13 +30,13 @@ export default function ActivityListItem({
       <div className={classNames(styles.wrapper)}>
         <Avatar verified={user.verified} url={user.avatar.url}></Avatar>
         <div>{user.name}</div>
-        {user.type == "like" ? <p>liked</p> : <p>bought</p>}
+        {type == "like" ? <p>liked</p> : <p>bought</p>}
         <Link href="">{nft.name} </Link>
         <span>by</span>
         <Link href=""> {nft.owner.username}</Link>
       </div>
       <div>
-        {formatDistance(parseISO("2022-02-06T22:18:15"), new Date())} ago
+        {formatDistance(parseISO(created_at), new Date())} ago
       </div>
     </div>
   );

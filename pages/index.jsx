@@ -10,7 +10,8 @@ import dataFeatured from "../data/featured.json";
 import dataProfile from "../data/profile.json";
 import dataTrending from "../data/trending.json";
 import dataUsers from "../data/users.json";
-import ActivityListItem from '../src/components/activity/ActivityListItem'
+import ActivityListItem from '../src/components/activity/ActivityListItem';
+import ActivityList from "../src/components/activity/ActivityList";
 
 
 export default function Index() {
@@ -100,6 +101,7 @@ export default function Index() {
       <Auctions cards={["BTC", "Kusama", "Tron", "PolkaDot"]}></Auctions>
       <Footer></Footer>
       <ActivityListItem></ActivityListItem>
+      <ActivityList></ActivityList>
     </div>
   );
 }

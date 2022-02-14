@@ -1,6 +1,5 @@
 import classNames from "classnames";
 import styles from "./ProfileCollection.module.scss";
-import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import { Typography } from "@mui/material";
 import ProfileCollectionFilters from "./ProfileCollectionFilters";

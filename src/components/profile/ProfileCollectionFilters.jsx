@@ -14,7 +14,6 @@ import Search from "@mui/icons-material/Search";
 export default function ProfileCollectionFilters({filters}) {
   return (
     <div className={classNames(styles["profile-collection-filters"])}>
-      Explore
       <FormControl className={classNames(styles["form-control"])}>
         <Select
           autoWidth="true"
@@ -36,7 +35,6 @@ export default function ProfileCollectionFilters({filters}) {
           ),
 
         }}
-        variant='standard'
       ></TextField>
     </div>
   );

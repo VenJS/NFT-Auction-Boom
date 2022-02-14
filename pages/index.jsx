@@ -10,7 +10,7 @@ import dataFeatured from "../data/featured.json";
 import dataProfile from "../data/profile.json";
 import dataTrending from "../data/trending.json";
 import dataUsers from "../data/users.json";
-import ActivityFilters from "../src/components/activity/ActivityFilters";
+import ActivityListItem from '../src/components/activity/ActivityListItem'
 
 
 export default function Index() {
@@ -99,7 +99,7 @@ export default function Index() {
       <How></How>
       <Auctions cards={["BTC", "Kusama", "Tron", "PolkaDot"]}></Auctions>
       <Footer></Footer>
-      <ActivityFilters></ActivityFilters>
+      <ActivityListItem></ActivityListItem>
     </div>
   );
 }

@@ -100,7 +100,6 @@ export default function Index() {
       <How></How>
       <Auctions cards={["BTC", "Kusama", "Tron", "PolkaDot"]}></Auctions>
       <Footer></Footer>
-      <ActivityListItem></ActivityListItem>
       <ActivityList></ActivityList>
     </div>
   );

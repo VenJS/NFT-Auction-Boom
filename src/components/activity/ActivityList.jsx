@@ -66,7 +66,7 @@ export default function ActivityList({
           verified: Boolean,
         },
       },
-      type: "li",
+      type: "like",
     },
   ],
 }) {
@@ -79,7 +79,7 @@ export default function ActivityList({
             type={item.type}
             url={item.user.avatar.url}
             key={i}
-          ></ActivityListItem>;
+          ></ActivityListItem>
         })}
       </Stack>
       <ActivityListItem></ActivityListItem>

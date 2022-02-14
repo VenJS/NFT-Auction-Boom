@@ -11,12 +11,14 @@ import {
 } from "@mui/material";
 import Search from "@mui/icons-material/Search";
 
-export default function ActivityFilters() {
+export default function ActivityFilters({filters}) {
   return (
     <div className={classNames(styles["activity-filters"])}>
       Activity
-      <div className={classNames(styles.selectors)}>
-        <Select label="Sort by" className={classNames(styles.select)}></Select>
+      <FormControl className={classNames(styles.selectors)}>
+        <Select label="Sort by" className={classNames(styles.select)}>
+        <InputLabel>{filters}</InputLabel>
+        </Select>
         <Select label="Type" className={classNames(styles.select)}></Select>
         <TextField
           className={classNames(styles["search-bar"])}
@@ -29,7 +31,7 @@ export default function ActivityFilters() {
           }}
           variant='standard'
         ></TextField>
-      </div>
+      </FormControl>
     </div>
   );
 }

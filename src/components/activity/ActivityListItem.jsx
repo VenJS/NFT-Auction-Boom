@@ -31,9 +31,9 @@ export default function ActivityListItem({
         <Avatar verified={user.verified} url={user.avatar.url}></Avatar>
         <div>{user.name}</div>
         {type == "like" ? <p>liked</p> : <p>bought</p>}
-        <Link href="">{nft.name} </Link>
+        <Link href="/">{nft.name} </Link>
         <span>by</span>
-        <Link href=""> {nft.owner.username}</Link>
+        <Link href="/"> {nft.owner.username}</Link>
       </div>
       <div>
         {formatDistance(parseISO(created_at), new Date())} ago

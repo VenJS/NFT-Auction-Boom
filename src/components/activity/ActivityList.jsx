@@ -66,23 +66,23 @@ export default function ActivityList({
           verified: Boolean,
         },
       },
-      type: "buy",
-    }
+      type: "li",
+    },
   ],
 }) {
-    items.map((item, i) => console.log(item.user.avatar.url))
   return (
     <div className={classNames(styles["activity-list"])}>
-      {items.map((item, i) => {
-        <Stack spacing={2}>
+      <Stack spacing={2} direction="column">
+        {items.map((item, i) => {
           <ActivityListItem
             created_at={item.created_at}
             type={item.type}
             url={item.user.avatar.url}
             key={i}
-          ></ActivityListItem>
-        </Stack>
-      })}s
+          ></ActivityListItem>;
+        })}
+      </Stack>
+      <ActivityListItem></ActivityListItem>
     </div>
   );
 }

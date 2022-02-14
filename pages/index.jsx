@@ -10,7 +10,7 @@ import dataFeatured from "../data/featured.json";
 import dataProfile from "../data/profile.json";
 import dataTrending from "../data/trending.json";
 import dataUsers from "../data/users.json";
-import ProfileCollection from "../src/components/profile/ProfileCollection";
+
 
 export default function Index() {
   return (
@@ -98,7 +98,7 @@ export default function Index() {
       <How></How>
       <Auctions cards={["BTC", "Kusama", "Tron", "PolkaDot"]}></Auctions>
       <Footer></Footer>
-      <ProfileCollection></ProfileCollection>
+      
     </div>
   );
 }

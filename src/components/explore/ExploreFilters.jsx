@@ -12,18 +12,21 @@ import {
 import Search from "@mui/icons-material/Search";
 
 export default function ExploreFilters({
-  filters
+  filters 
 }) {
   return (
     <div className={classNames(styles["explore-filters"])}>
-      <Stack>
+      <Stack direction='row' spacing={2}>
         <FormControl className={classNames(styles.selectors)}>
-          <InputLabel>{filters.sort}</InputLabel>
+          <InputLabel>Sort by</InputLabel>
           <Select
             label="Sort by"
             className={classNames(styles.select)}
-          ></Select>
-          <InputLabel>{filters.price}</InputLabel>
+          >
+              <MenuItem>{filters}</MenuItem>
+          </Select>
+          <div>search</div>
+          
           <Select
             label="Price Range"
             className={classNames(styles.select)}

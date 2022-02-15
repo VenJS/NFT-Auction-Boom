@@ -14,11 +14,10 @@ import Search from "@mui/icons-material/Search";
 export default function ExploreFilters({ filters }) {
   return (
     <div className={classNames(styles["explore-filters"])}>
-      <Stack>
+      <Stack direction='row'>
         <FormControl>
           <Select autoWidth="true" label="Sort by">
             <InputLabel>{filters}</InputLabel>
-            <MenuItem></MenuItem>
           </Select>
         </FormControl>
         <FormControl>

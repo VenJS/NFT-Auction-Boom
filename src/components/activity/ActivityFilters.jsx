@@ -14,7 +14,6 @@ import Search from "@mui/icons-material/Search";
 export default function ActivityFilters({filters}) {
   return (
     <div className={classNames(styles["activity-filters"])}>
-      Activity
       <FormControl className={classNames(styles.selectors)}>
         <Select label="Sort by" className={classNames(styles.select)}>
         <InputLabel>{filters}</InputLabel>

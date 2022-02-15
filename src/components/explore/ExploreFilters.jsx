@@ -14,14 +14,13 @@ import Search from "@mui/icons-material/Search";
 export default function ExploreFilters({ filters }) {
   return (
     <div className={classNames(styles["explore-filters"])}>
-      <Stack direction="row">
-        <FormControl>
-          <Select autoWidth="true" label="Sort by"></Select>
-        </FormControl>
-        <FormControl>
-          <Select label="Price range"></Select>
-        </FormControl>
+      <FormControl className={classNames(styles.selectors)}>
+        <Select label="Sort by" className={classNames(styles.select)}>
+        <InputLabel>{filters}</InputLabel>
+        </Select>
+        <Select label="Type" className={classNames(styles.select)}></Select>
         <TextField
+          className={classNames(styles["search-bar"])}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -29,12 +28,9 @@ export default function ExploreFilters({ filters }) {
               </InputAdornment>
             ),
           }}
-          variant="standard"
-        >
-          <InputLabel>{filters}</InputLabel>
-          <MenuItem></MenuItem>
-        </TextField>
-      </Stack>
+          variant='standard'
+        ></TextField>
+      </FormControl>
     </div>
   );
 }

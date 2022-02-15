@@ -11,26 +11,36 @@ import {
 } from "@mui/material";
 import Search from "@mui/icons-material/Search";
 
-export default function ExploreFilters({ filters }) {
+export default function ExploreFilters({
+  filters = {sort: 'Name' , price: '2 ETH'}
+}) {
   return (
     <div className={classNames(styles["explore-filters"])}>
-      <FormControl className={classNames(styles.selectors)}>
-        <Select label="Sort by" className={classNames(styles.select)}>
-        <InputLabel>{filters}</InputLabel>
-        </Select>
-        <Select label="Type" className={classNames(styles.select)}></Select>
-        <TextField
-          className={classNames(styles["search-bar"])}
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <Search></Search>
-              </InputAdornment>
-            ),
-          }}
-          variant='standard'
-        ></TextField>
-      </FormControl>
+      <Stack>
+        <FormControl className={classNames(styles.selectors)}>
+          <InputLabel>{filters.sort}</InputLabel>
+          <Select
+            label="Sort by"
+            className={classNames(styles.select)}
+          ></Select>
+          <InputLabel>{filters.price}</InputLabel>
+          <Select
+            label="Price Range"
+            className={classNames(styles.select)}
+          ></Select>
+          <TextField
+            className={classNames(styles["search-bar"])}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <Search></Search>
+                </InputAdornment>
+              ),
+            }}
+            variant="standard"
+          ></TextField>
+        </FormControl>
+      </Stack>
     </div>
   );
 }

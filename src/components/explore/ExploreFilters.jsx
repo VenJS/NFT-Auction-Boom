@@ -7,6 +7,7 @@ import {
   InputLabel,
   TextField,
   InputAdornment,
+  MenuItem,
 } from "@mui/material";
 import Search from "@mui/icons-material/Search";
 
@@ -17,6 +18,7 @@ export default function ExploreFilters({ filters }) {
         <FormControl>
           <Select autoWidth="true" label="Sort by">
             <InputLabel>{filters}</InputLabel>
+            <MenuItem></MenuItem>
           </Select>
         </FormControl>
         <FormControl>

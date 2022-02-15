@@ -11,26 +11,20 @@ import {
 } from "@mui/material";
 import Search from "@mui/icons-material/Search";
 
-export default function ExploreFilters({
-  filters 
-}) {
+export default function ExploreFilters({ filters }) {
   return (
     <div className={classNames(styles["explore-filters"])}>
-      <Stack direction='row' spacing={2}>
+      <Stack direction="row" spacing={2}>
         <FormControl className={classNames(styles.selectors)}>
           <InputLabel>Sort by</InputLabel>
-          <Select
-            label="Sort by"
-            className={classNames(styles.select)}
-          >
-              <MenuItem>{filters}</MenuItem>
+          <Select label="Sort by" className={classNames(styles.select)}>
+            <MenuItem>{filters}</MenuItem>
           </Select>
           <div>search</div>
-          
-          <Select
-            label="Price Range"
-            className={classNames(styles.select)}
-          ></Select>
+
+          <Select label="Price Range" className={classNames(styles.select)}>
+            <MenuItem>{filters}</MenuItem>
+          </Select>
           <TextField
             className={classNames(styles["search-bar"])}
             InputProps={{

@@ -31,8 +31,9 @@ export default function ExploreFilters({ filters }) {
                 <Search></Search>
               </InputAdornment>
             ),
+            variant='standard'
           }}
-          variant='standard'
+          
         ></TextField>
       </Stack>
     </div>

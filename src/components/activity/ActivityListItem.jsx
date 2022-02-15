@@ -10,7 +10,7 @@ export default function ActivityListItem({
     avatar: {
       url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfkXX6ehXfa-zzSjkEQjne-NTk9Qkh2HtqXQ&usqp=CAU",
     },
-    verified: Boolean,
+    verified: true,
     name: "Gordon",
   },
   nft = {
@@ -18,9 +18,9 @@ export default function ActivityListItem({
     owner: {
       username: "Antonio",
       avatar: {
-        url: String,
+        url: 'String',
       },
-      verified: Boolean,
+      verified: true,
     },
   },
   type = "buy",

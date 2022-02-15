@@ -1,7 +1,7 @@
 @use "../../styles/colors";
 
 .wrapper {
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: center;
   background-color: colors.$background_paper;
@@ -45,4 +45,11 @@
 
 .paperExplore:hover {
   background-color: colors.$background_default !important;
+}
+
+
+.grid-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

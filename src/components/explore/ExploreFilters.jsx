@@ -12,7 +12,7 @@ import {
 import Search from "@mui/icons-material/Search";
 
 export default function ExploreFilters({
-  filters = {sort: 'Name' , price: '2 ETH'}
+  filters
 }) {
   return (
     <div className={classNames(styles["explore-filters"])}>

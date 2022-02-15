@@ -14,11 +14,9 @@ import Search from "@mui/icons-material/Search";
 export default function ExploreFilters({ filters }) {
   return (
     <div className={classNames(styles["explore-filters"])}>
-      <Stack direction='row'>
+      <Stack direction="row">
         <FormControl>
-          <Select autoWidth="true" label="Sort by">
-            <InputLabel>{filters}</InputLabel>
-          </Select>
+          <Select autoWidth="true" label="Sort by"></Select>
         </FormControl>
         <FormControl>
           <Select label="Price range"></Select>
@@ -30,10 +28,12 @@ export default function ExploreFilters({ filters }) {
                 <Search></Search>
               </InputAdornment>
             ),
-            
           }}
-          variant='standard'
-        ></TextField>
+          variant="standard"
+        >
+          <InputLabel>{filters}</InputLabel>
+          <MenuItem></MenuItem>
+        </TextField>
       </Stack>
     </div>
   );

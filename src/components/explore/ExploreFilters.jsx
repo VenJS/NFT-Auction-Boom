@@ -21,7 +21,7 @@ export default function ExploreFilters({ filters }) {
             <MenuItem>{filters}</MenuItem>
           </Select>
           <div>search</div>
-
+          <InputLabel>Sort by</InputLabel>
           <Select label="Price Range" className={classNames(styles.select)}>
             <MenuItem>{filters}</MenuItem>
           </Select>

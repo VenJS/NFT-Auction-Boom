@@ -7,8 +7,8 @@ import {
   InputLabel,
   TextField,
   InputAdornment,
-  MenuItem,
 } from "@mui/material";
+import MenuItem from '@mui/material/MenuItem';
 import Search from "@mui/icons-material/Search";
 
 export default function ExploreFilters({ filters }) {
@@ -18,12 +18,12 @@ export default function ExploreFilters({ filters }) {
         <FormControl className={classNames(styles.selectors)}>
           <InputLabel>Sort by</InputLabel>
           <Select label="Sort by" className={classNames(styles.select)}>
-            <MenuItem>{filters}</MenuItem>
+            <MenuItem>jhghjgj</MenuItem>
           </Select>
           <div>search</div>
           <InputLabel>Sort by</InputLabel>
           <Select label="Price Range" className={classNames(styles.select)}>
-            <MenuItem>{filters}</MenuItem>
+            <MenuItem>gjghhgjh</MenuItem>
           </Select>
           <TextField
             className={classNames(styles["search-bar"])}

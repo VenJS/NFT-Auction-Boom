@@ -1,4 +1,6 @@
-module.export = {
-    apiUrl: 'process.env.API_KEY'
-}
+module.exports = {
+    env: {
+        apiUrl: 'https://nft-auction.herokuapp.com',
+    },
+  }
  

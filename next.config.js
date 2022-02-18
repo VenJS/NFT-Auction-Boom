@@ -1,2 +1,2 @@
 
-apiUrl = 'https://nft-auction.herokuapp.com'
+const apiUrl = process.env.API_KEY

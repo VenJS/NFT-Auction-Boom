@@ -1,2 +1,4 @@
-
-const apiUrl = process.env.API_KEY
+module.export = {
+    apiUrl: 'process.env.API_KEY'
+}
+ 

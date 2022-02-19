@@ -5,6 +5,7 @@ import How from "../src/components/how/How";
 import Auctions from "../src/components/auctions/Auctions";
 import Footer from "../src/components/footer/Footer";
 import TopCollectors from "../src/components/collectors/TopCollectors";
+import Card from "../src/components/card/Card";
 
 import dataFeatured from "../data/featured.json";
 import dataProfile from "../data/profile.json";
@@ -101,7 +102,7 @@ export default function Index() {
       <How></How>
       <Auctions cards={["BTC", "Kusama", "Tron", "PolkaDot"]}></Auctions>
       <Footer></Footer>
-      <ExploreFilters></ExploreFilters>
+      <Card></Card>
     </div>
   );
 }

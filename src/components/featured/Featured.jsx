@@ -13,8 +13,9 @@ export default function Featured({ items = [] }) {
       {items ? (
         <ImageList cols={6} >
           {data.map((item, i) => (
-            <ImageListItem key={i} cols={item.cols || 1} rows={item.rows || 1}>
+            <ImageListItem key={i} cols={item.cols || 1} rows={item.rows || 1} className={classNames(styles.images)}>
               <img
+                className={classNames(styles.image)}
                 src={item.image}
                 alt={item.title}
                 onClick={(e) => {

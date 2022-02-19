@@ -50,7 +50,7 @@ export default function TopCollectors({
         </Select>
       </Container>
       <Grid container className={classNames(styles.container)}>
-        {newArr.map((arr, i) => (<CollectorColumn key={i} index={arr[i]}></CollectorColumn>))}
+        {newArr.map((arr, i) => (<CollectorColumn key={i} index={arr[i]} name = {arr.name}></CollectorColumn>))}
       </Grid>
     </div>
   );

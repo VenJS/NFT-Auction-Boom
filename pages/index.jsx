@@ -6,15 +6,15 @@ import Auctions from "../src/components/auctions/Auctions";
 import Footer from "../src/components/footer/Footer";
 import TopCollectors from "../src/components/collectors/TopCollectors";
 import Card from "../src/components/card/Card";
+import CollectorColumn from "../src/components/collectors/CollectorColumn";
 
 import dataFeatured from "../data/featured.json";
 import dataProfile from "../data/profile.json";
 import dataTrending from "../data/trending.json";
 import dataUsers from "../data/users.json";
-import ActivityListItem from '../src/components/activity/ActivityListItem';
+import ActivityListItem from "../src/components/activity/ActivityListItem";
 import ActivityList from "../src/components/activity/ActivityList";
 import ExploreFilters from "../src/components/explore/ExploreFilters";
-
 
 export default function Index() {
   return (
@@ -102,7 +102,7 @@ export default function Index() {
       <How></How>
       <Auctions cards={["BTC", "Kusama", "Tron", "PolkaDot"]}></Auctions>
       <Footer></Footer>
-      <Card></Card>
+      <CollectorColumn></CollectorColumn>
     </div>
   );
 }

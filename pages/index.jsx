@@ -19,6 +19,8 @@ export default function Index() {
 
   useEffect(async () => {
     const result = await axios("https://nft-auction.herokuapp.com/featured");
+    result.data.nfts[0].rows = 2;
+    result.data.nfts[0].cols = 3;
     setFeaturedCards(result.data.nfts);
   }, []);
 

@@ -22,7 +22,7 @@ export default function Featured({ items = [] }) {
                 src={item.image}
                 alt={item.title}
                 onClick={(e) => {
-                  router.push(item.href);
+                  router.push(`/product/${item.id}`);
                 }}
               />
             </ImageListItem>

@@ -35,7 +35,6 @@ export default function TopCollectors({
     },
   ],
 }) {
-  console.log(collectors);
   const newArr = chunk(collectors, 1);
 
   return (

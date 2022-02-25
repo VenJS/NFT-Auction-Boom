@@ -7,7 +7,6 @@ import Card from "../../src/components/card/Card";
 import nfts from "../../data/nfts.json";
 
 export default function Explore() {
-  console.log(nfts);
   return (
     <div>
       <Header></Header>
@@ -18,7 +17,7 @@ export default function Explore() {
             <ExploreFilters></ExploreFilters>
           </Grid>
           <Grid item>
-              <Card></Card>
+            <Card></Card>
           </Grid>
         </Grid>
       </Container>

@@ -7,7 +7,6 @@ import Footer from "../src/components/footer/Footer";
 import TopCollectors from "../src/components/collectors/TopCollectors";
 import CollectorColumn from "../src/components/collectors/CollectorColumn";
 import { useEffect, useState } from "react";
-import axios from "axios";
 
 import dataFeatured from "../data/featured.json";
 import dataProfile from "../data/profile.json";
@@ -17,14 +16,16 @@ import dataUsers from "../data/users.json";
 export default function Index() {
   const [featuredCards, setFeaturedCards] = useState();
 
-  useEffect(async () => {
-    const result = await axios("https://nft-auction.herokuapp.com/featured");
-    result.data.nfts[0].rows = 2;
-    result.data.nfts[0].cols = 3;
-    setFeaturedCards(result.data.nfts);
-  }, []);
+  let url = process.env.apiUrl;
 
-  console.log(featuredCards);
+  useEffect(async () => {
+    const result = await fetch("https://nft-auction.herokuapp.com/featured")
+      .then((response) => response.json())
+      .then((res) => res.nfts);
+    result[0].rows = 2;
+    result[0].cols = 3;
+    setFeaturedCards(result);
+  }, []);
 
   return (
     <div>

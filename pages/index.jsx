@@ -43,7 +43,6 @@ export default function Index() {
     setTrendingFilters(res);
   }, []);
 
-  console.log(trendingFilters);
   return (
     <div>
       <Header />

@@ -23,8 +23,8 @@ export default function Trending({ cards = [], sort = [] }) {
         </Select>
       </Container>
       <Grid container spacing={2} className={classNames(styles.container)}>
-        {cards.map((card, i) => (
-          <Grid item xs={3} key={i}>
+        <Grid item xs={3}>
+          {cards.map((card, i) => (
             <Card
               name={card.name}
               like={card.likes}
@@ -33,9 +33,10 @@ export default function Trending({ cards = [], sort = [] }) {
               price={card.price}
               currency={card.currency}
               user={card.user}
+              key={i}
             ></Card>
-          </Grid>
-        ))}
+          ))}
+        </Grid>
       </Grid>
     </div>
   );

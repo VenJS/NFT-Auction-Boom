@@ -5,19 +5,21 @@ import { Container } from "@mui/material";
 import classNames from "classnames";
 import styles from "./Trending.module.scss";
 
-export default function Trending({ cards = [] }) {
+export default function Trending({ cards = [], sort = [] }) {
   return (
     <div>
       <Container maxWidth="false" className={classNames(styles.wrapper)}>
         <div className={classNames(styles.trending)}>Trending</div>
         <Select
           className={classNames(styles.select)}
-          label="This"
+          label="label"
           displayEmpty="true"
         >
-          <MenuItem value={10} label="this week">
-            This week
-          </MenuItem>
+          {sort.map((arr, i) => (
+            <MenuItem value={arr.value} label={arr.label}>
+              {arr.label}
+            </MenuItem>
+          ))}
         </Select>
       </Container>
       <Grid container spacing={2} className={classNames(styles.container)}>
@@ -30,6 +32,7 @@ export default function Trending({ cards = [] }) {
               timeLeft={card.timeLeft}
               price={card.price}
               currency={card.currency}
+              user={card.user}
             ></Card>
           </Grid>
         ))}

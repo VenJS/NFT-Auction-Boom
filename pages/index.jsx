@@ -16,6 +16,7 @@ import dataUsers from "../data/users.json";
 export default function Index() {
   const [featuredCards, setFeaturedCards] = useState();
   const [trendingItems, setTrendingItems] = useState();
+  const [trendingFilters, setTrendingFilters] = useState();
 
   let url = process.env.apiUrl;
 
@@ -35,11 +36,19 @@ export default function Index() {
     setTrendingItems(result);
   }, []);
 
+  useEffect(async () => {
+    const res = await fetch("https://nft-auction.herokuapp.com/trending")
+      .then((response) => response.json())
+      .then((result) => result.filters.sort);
+    setTrendingFilters(res);
+  }, []);
+
+  console.log(trendingFilters);
   return (
     <div>
       <Header />
       <Featured items={featuredCards}></Featured>
-      <Trending cards={trendingItems}></Trending>
+      <Trending cards={trendingItems} sort={trendingFilters}></Trending>
       <TopCollectors
         collectors={[
           {

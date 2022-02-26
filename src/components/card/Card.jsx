@@ -16,23 +16,20 @@ export default function Card({
   timeLeft = 100000000,
   user = {
     avatar: {
-      url: "String",
+      url: String,
     },
-    verified: "Boolean",
+    verified: Boolean,
   },
   price = "~12.2",
   currency = "ETH",
 }) {
-  
   const [likesNumber, setLikesNumber] = useState(likes);
-
- 
 
   return (
     <div>
       {timeLeft ? (
         <CardTag className={classNames(styles.card)}>
-          <Avatar url="images/avatar.png" size="55px" />
+          <Avatar url={user.avatar.url} verified={user.verified} />
           <img className={classNames(styles.media)} src={mediaUrl} />
           <div className={classNames(styles.badge)}>
             <FiberManualRecordIcon></FiberManualRecordIcon>
@@ -49,7 +46,7 @@ export default function Card({
               className={classNames(styles.likes)}
               icon={<Favorite className={classNames(styles.icon)} />}
               clickable
-              onClick={() => setLikesNumber(likesNumber + 1) }
+              onClick={() => setLikesNumber(likesNumber + 1)}
               label={millify(likesNumber)}
             ></Chip>
             <div className={classNames(styles.price)}>

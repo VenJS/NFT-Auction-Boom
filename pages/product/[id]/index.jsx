@@ -1,18 +1,29 @@
 import Header from "../../../src/components/header/Header";
 import Footer from "../../../src/components/footer/Footer";
 import ProductContainer from "../../../src/components/product/ProductContainer";
-import dataNfts from '../../../data/nfts.json';
+import dataNfts from "../../../data/nfts.json";
 import { useRouter } from "next/router";
+import { useState, useEffect } from "react";
 
 export default function Page() {
+  const router = useRouter();
 
-    const router = useRouter()
+  const [product, setProduct] = useState();
 
-    return (
-        <div>
-            <Header></Header>
-            <ProductContainer></ProductContainer>
-            <Footer></Footer>
-        </div>
-    )
+  useEffect(async () => {
+    const result = await fetch("https://nft-auction.herokuapp.com/nfts/{id}")
+      .then((response) => response.json())
+      .then((res) => res);
+    setProduct(result);
+  }, []);
+
+  console.log(product);
+
+  return (
+    <div>
+      <Header></Header>
+      <ProductContainer product={product}></ProductContainer>
+      <Footer></Footer>
+    </div>
+  );
 }

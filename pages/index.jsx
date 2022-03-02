@@ -84,15 +84,15 @@ export default function Index() {
     setAuctionFilters(result);
   }, []);
 
-  console.log(auctions);
-  console.log(auctionFilters);
-
   return (
     <div>
       <Header />
       <Featured items={featuredCards}></Featured>
       <Trending cards={trendingItems} sort={trendingFilters}></Trending>
-      <TopCollectors collectors={collectors} />
+      <TopCollectors
+        collectors={collectors}
+        collectorFilters={collectorFilters}
+      />
       <How></How>
       <Auctions cards={auctions} auctionFilters={auctionFilters}></Auctions>
       <Footer></Footer>

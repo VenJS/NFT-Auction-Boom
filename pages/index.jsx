@@ -19,6 +19,8 @@ export default function Index() {
   const [trendingFilters, setTrendingFilters] = useState();
   const [collectors, setCollectors] = useState();
   const [collectorFilters, setCollectorFilters] = useState();
+  const [auctions, setAuctions] = useState();
+  const [auctionFilters, setAuctionFilters] = useState();
 
   let url = process.env.apiUrl;
 
@@ -60,24 +62,39 @@ export default function Index() {
       "https://nft-auction.herokuapp.com/top-collectors"
     )
       .then((response) => response.json())
-      .then((res) => res.filters.sort);
+      .then((res) => res.filters);
     setCollectorFilters(result);
   }, []);
 
-  console.log(collectors);
-  console.log(collectorFilters);
+  useEffect(async () => {
+    const result = await fetch(
+      "https://nft-auction.herokuapp.com/live-auctions"
+    )
+      .then((response) => response.json())
+      .then((res) => res.nfts);
+    setAuctions(result);
+  }, []);
+
+  useEffect(async () => {
+    const result = await fetch(
+      "https://nft-auction.herokuapp.com/live-auctions"
+    )
+      .then((response) => response.json())
+      .then((res) => res.filters);
+    setAuctionFilters(result);
+  }, []);
+
+  console.log(auctions);
+  console.log(auctionFilters);
 
   return (
     <div>
       <Header />
       <Featured items={featuredCards}></Featured>
       <Trending cards={trendingItems} sort={trendingFilters}></Trending>
-      <TopCollectors
-        collectors={collectors}
-        collectorFilters={collectorFilters}
-      />
+      <TopCollectors collectors={collectors} />
       <How></How>
-      <Auctions cards={["BTC", "Kusama", "Tron", "PolkaDot"]}></Auctions>
+      <Auctions cards={auctions} auctionFilters={auctionFilters}></Auctions>
       <Footer></Footer>
       <CollectorColumn></CollectorColumn>
     </div>

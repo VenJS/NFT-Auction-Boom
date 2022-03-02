@@ -12,7 +12,7 @@ import {
 import CollectorColumn from "./CollectorColumn";
 import array from "lodash/array";
 
-export default function TopCollectors({ collectors, collectorFilters }) {
+export default function TopCollectors({ collectors }) {
   return (
     <Container maxWidth="xl">
       <Grid className={classNames(styles.header)} container>

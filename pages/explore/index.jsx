@@ -36,7 +36,7 @@ export default function Explore() {
         <Grid container>
           <Grid item>
             <ExploreTitle></ExploreTitle>
-            <ExploreFilters filters={nftFilters}></ExploreFilters>
+            <ExploreFilters filters={nftFilters} nfts={nfts}></ExploreFilters>
           </Grid>
           <Grid item>
             <Card></Card>

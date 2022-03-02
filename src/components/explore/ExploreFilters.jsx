@@ -8,10 +8,10 @@ import {
   TextField,
   InputAdornment,
 } from "@mui/material";
-import MenuItem from '@mui/material/MenuItem';
+import MenuItem from "@mui/material/MenuItem";
 import Search from "@mui/icons-material/Search";
 
-export default function ExploreFilters({ filters }) {
+export default function ExploreFilters({ filters, nfts }) {
   return (
     <div className={classNames(styles["explore-filters"])}>
       <Stack direction="row" spacing={2}>

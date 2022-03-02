@@ -8,10 +8,12 @@ import { useState, useEffect } from "react";
 export default function Page() {
   const router = useRouter();
 
+  let url = process.env.apiUrl;
+
   const [product, setProduct] = useState();
 
   useEffect(async () => {
-    const result = await fetch("https://nft-auction.herokuapp.com/nfts/{id}")
+    const result = await fetch("https://nft-auction.herokuapp.com/nfts")
       .then((response) => response.json())
       .then((res) => res);
     setProduct(result);

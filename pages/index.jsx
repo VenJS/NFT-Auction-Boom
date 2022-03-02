@@ -96,7 +96,6 @@ export default function Index() {
       <How></How>
       <Auctions cards={auctions} auctionFilters={auctionFilters}></Auctions>
       <Footer></Footer>
-      <CollectorColumn></CollectorColumn>
     </div>
   );
 }

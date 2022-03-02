@@ -5,8 +5,28 @@ import Footer from "../../src/components/footer/Footer";
 import { Container, Grid } from "@mui/material";
 import Card from "../../src/components/card/Card";
 import nfts from "../../data/nfts.json";
+import { useState, useEffect } from "react";
 
 export default function Explore() {
+  const [nfts, setNfts] = useState();
+  const [nftFilters, setNftFilters] = useState();
+
+  useEffect(async () => {
+    const result = await fetch("https://nft-auction.herokuapp.com/explore")
+      .then((response) => response.json())
+      .then((res) => res.nfts);
+    setNfts(result);
+  }, []);
+
+  useEffect(async () => {
+    const result = await fetch("https://nft-auction.herokuapp.com/explore")
+      .then((response) => response.json())
+      .then((res) => res.filters);
+    setNftFilters(result);
+  }, []);
+
+  console.log(nfts);
+
   return (
     <div>
       <Header></Header>
@@ -14,7 +34,7 @@ export default function Explore() {
         <Grid container>
           <Grid item>
             <ExploreTitle></ExploreTitle>
-            <ExploreFilters></ExploreFilters>
+            <ExploreFilters filters={nftFilters}></ExploreFilters>
           </Grid>
           <Grid item>
             <Card></Card>

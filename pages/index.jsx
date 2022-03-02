@@ -17,6 +17,8 @@ export default function Index() {
   const [featuredCards, setFeaturedCards] = useState();
   const [trendingItems, setTrendingItems] = useState();
   const [trendingFilters, setTrendingFilters] = useState();
+  const [collectors, setCollectors] = useState();
+  const [collectorFilters, setCollectorFilters] = useState();
 
   let url = process.env.apiUrl;
 
@@ -33,6 +35,7 @@ export default function Index() {
     const result = await fetch("https://nft-auction.herokuapp.com/trending")
       .then((response) => response.json())
       .then((res) => res.nfts);
+
     setTrendingItems(result);
   }, []);
 
@@ -43,38 +46,35 @@ export default function Index() {
     setTrendingFilters(res);
   }, []);
 
+  useEffect(async () => {
+    const result = await fetch(
+      "https://nft-auction.herokuapp.com/top-collectors"
+    )
+      .then((response) => response.json())
+      .then((res) => res.users);
+    setCollectors(result);
+  }, []);
+
+  useEffect(async () => {
+    const result = await fetch(
+      "https://nft-auction.herokuapp.com/top-collectors"
+    )
+      .then((response) => response.json())
+      .then((res) => res.filters.sort);
+    setCollectorFilters(result);
+  }, []);
+
+  console.log(collectors);
+  console.log(collectorFilters);
+
   return (
     <div>
       <Header />
       <Featured items={featuredCards}></Featured>
       <Trending cards={trendingItems} sort={trendingFilters}></Trending>
       <TopCollectors
-        collectors={[
-          {
-            name: "G. K",
-            nftsCount: "341",
-            avatar: "String",
-            verified: true,
-          },
-          {
-            name: "Michael Poulsen",
-            nftsCount: "168",
-            avatar: "String",
-            verified: true,
-          },
-          {
-            name: "James Hetfield",
-            nftsCount: "107",
-            avatar: "String",
-            verified: true,
-          },
-          {
-            name: "Steven Tyler",
-            nftsCount: 71,
-            avatar: "String",
-            verified: true,
-          },
-        ]}
+        collectors={collectors}
+        collectorFilters={collectorFilters}
       />
       <How></How>
       <Auctions cards={["BTC", "Kusama", "Tron", "PolkaDot"]}></Auctions>

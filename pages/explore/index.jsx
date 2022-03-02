@@ -8,6 +8,8 @@ import nfts from "../../data/nfts.json";
 import { useState, useEffect } from "react";
 
 export default function Explore() {
+  let url = process.env.apiUrl;
+
   const [nfts, setNfts] = useState();
   const [nftFilters, setNftFilters] = useState();
 

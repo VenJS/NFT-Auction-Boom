@@ -8,7 +8,7 @@ import styles from "./Header.module.scss";
 
 export default function Header() {
   return (
-    <div className={classNames(styles['grid-container'])}>
+    <div className={classNames(styles["grid-container"])}>
       <Grid container className={classNames(styles.wrapper)} spacing={2}>
         <Grid item xs={4} className={classNames(styles.logoWrapper)}>
           <Logo className={classNames(styles.logo)} />

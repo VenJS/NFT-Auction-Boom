@@ -19,8 +19,6 @@ export default function Page() {
     setProduct(result);
   }, []);
 
-  console.log(product);
-
   return (
     <div>
       <Header></Header>

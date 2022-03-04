@@ -10,11 +10,7 @@ export default function Trending({ cards = [], sort = [] }) {
     <div>
       <Container maxWidth="false" className={classNames(styles.wrapper)}>
         <div className={classNames(styles.trending)}>Trending</div>
-        <Select
-          className={classNames(styles.select)}
-          label="label"
-          displayEmpty="true"
-        >
+        <Select className={classNames(styles.select)} label="label">
           {sort.map((arr, i) => (
             <MenuItem value={arr.value} label={arr.label}>
               {arr.label}

@@ -28,7 +28,7 @@ export default function TopCollectors({ collectors }) {
           style={{ justifyContent: "flex-end", display: "flex" }}
         >
           <FormControl sx={{ m: 1, minWidth: 200 }}>
-            <Select displayEmpty>
+            <Select>
               <MenuItem>This week</MenuItem>
               <MenuItem>This month</MenuItem>
               <MenuItem>This year</MenuItem>

@@ -55,7 +55,7 @@ export default function Auctions({ cards = [] }) {
         <Grid item xs={3}>
           <Card
             name="Reptile"
-            likes={411}
+            likes={1411}
             mediaUrl="https://www.thehindu.com/entertainment/art/ph95wn/article35362273.ece/alternates/FREE_615/Dhanya-Ajith2021Artontwitter"
             price="~8.2"
             currency="SOL"

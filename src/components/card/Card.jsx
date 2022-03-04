@@ -8,6 +8,7 @@ import { Favorite } from "@mui/icons-material";
 import Countdown from "react-countdown";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import { useState } from "react";
+import { CardHeader, CardContent, CardMedia } from "@mui/material";
 
 export default function Card({
   name = "String",
@@ -16,7 +17,7 @@ export default function Card({
   timeLeft = 100000000,
   user = {
     avatar: {
-      url: String,
+      url: "images/avatar.png",
     },
     verified: Boolean,
   },
@@ -26,10 +27,11 @@ export default function Card({
   const [likesNumber, setLikesNumber] = useState(likes);
 
   return (
-    <div>
+    <div style={{ display: "flex", justifyContent: "center" }}>
       {timeLeft ? (
-        <CardTag className={classNames(styles.card)}>
-          <Avatar url={user.avatar.url} verified={user.verified} />
+        <CardTag sx={{ maxWidth: 345 }} className={classNames(styles.card)}>
+          <Avatar verified={user.verified} url={user.avatar.url}></Avatar>
+
           <img className={classNames(styles.media)} src={mediaUrl} />
           <div className={classNames(styles.badge)}>
             <FiberManualRecordIcon></FiberManualRecordIcon>
@@ -47,7 +49,10 @@ export default function Card({
               icon={<Favorite className={classNames(styles.icon)} />}
               clickable
               onClick={() => setLikesNumber(likesNumber + 1)}
-              label={millify(likesNumber)}
+              label={millify(likesNumber, {
+                units: ["", "K", "M"],
+                space: true,
+              })}
             ></Chip>
             <div className={classNames(styles.price)}>
               {price} {currency}
@@ -55,7 +60,7 @@ export default function Card({
           </div>
         </CardTag>
       ) : (
-        <CardTag className={classNames(styles.card)}>
+        <CardTag sx={{ maxWidth: 345 }}>
           <Avatar url="images/avatar.png" size="55px" />
           <img className={classNames(styles.media)} src={mediaUrl} />
           <div className={classNames(styles.container)}>

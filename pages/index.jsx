@@ -5,8 +5,8 @@ import How from "../src/components/how/How";
 import Auctions from "../src/components/auctions/Auctions";
 import Footer from "../src/components/footer/Footer";
 import TopCollectors from "../src/components/collectors/TopCollectors";
-import CollectorColumn from "../src/components/collectors/CollectorColumn";
 import { useEffect, useState } from "react";
+import Card from "../src/components/card/Card";
 
 import dataFeatured from "../data/featured.json";
 import dataProfile from "../data/profile.json";
@@ -96,6 +96,7 @@ export default function Index() {
       <How></How>
       <Auctions cards={auctions} auctionFilters={auctionFilters}></Auctions>
       <Footer></Footer>
+      <Card></Card>
     </div>
   );
 }

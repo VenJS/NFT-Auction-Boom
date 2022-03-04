@@ -27,8 +27,6 @@ export default function Explore() {
     setNftFilters(result);
   }, []);
 
-  console.log(nfts);
-
   return (
     <div>
       <Header></Header>

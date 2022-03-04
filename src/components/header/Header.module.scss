@@ -36,6 +36,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  width: 100%;
 }
 
 .paper:hover {
@@ -46,10 +47,8 @@
   background-color: colors.$background_default !important;
 }
 
-
 .grid-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }

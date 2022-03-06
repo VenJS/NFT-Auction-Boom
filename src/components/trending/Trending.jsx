@@ -23,7 +23,7 @@ export default function Trending({ cards = [], sort = [] }) {
               name={card.name}
               like={card.likes}
               mediaUrl={card.mediaUrl}
-              timeLeft={card.timeLeft}
+              timeLeft={card.auction_end}
               price={card.price}
               currency={card.currency}
               user={card.user}

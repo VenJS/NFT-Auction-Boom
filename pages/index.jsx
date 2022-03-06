@@ -80,11 +80,10 @@ export default function Index() {
       "https://nft-auction.herokuapp.com/live-auctions"
     )
       .then((response) => response.json())
-      .then((res) => res.filters);
+      .then((res) => res.filters.price);
     setAuctionFilters(result);
   }, []);
 
-  console.log(collectorFilters);
   return (
     <div>
       <Header />
@@ -92,9 +91,8 @@ export default function Index() {
       <Trending cards={trendingItems} sort={trendingFilters}></Trending>
       <TopCollectors collectors={collectors} filter={collectorFilters} />
       <How></How>
-      <Auctions cards={auctions}></Auctions>
+      <Auctions cards={auctions} filter={auctionFilters}></Auctions>
       <Footer></Footer>
-      <Card></Card>
     </div>
   );
 }

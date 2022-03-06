@@ -17,7 +17,7 @@
 .media {
   padding-left: 1rem;
   padding-right: 1rem;
-  border-radius: 1.5rem;
+  border-radius: 2rem;
   height: 300px;
 }
 
@@ -38,12 +38,14 @@
 .countdown {
   display: flex;
   justify-content: center;
+  align-items: center;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   background-color: colors.$success_main;
   color: colors.$background_default;
-  font-weight: bold;
+  font-weight: bolder;
   width: 313px;
+
   position: relative;
   bottom: 51px;
 }
@@ -62,6 +64,12 @@
   padding: 0 !important;
   position: relative;
   bottom: 2rem;
+}
+
+.not-live-content {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .title {

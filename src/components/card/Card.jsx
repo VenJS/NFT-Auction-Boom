@@ -73,20 +73,40 @@ export default function Card({
           </CardContent>
         </CardTag>
       ) : (
-        <CardTag sx={{ maxWidth: 345 }}>
-          <Avatar url="images/avatar.png" size="55px" />
-          <img className={classNames(styles.media)} src={mediaUrl} />
-          <div className={classNames(styles.container)}>
-            <div className={classNames(styles.title)}>{name}</div>
+        <CardTag
+          sx={{ width: 345, height: 550 }}
+          className={classNames(styles.card)}
+        >
+          <CardHeader
+            avatar={<Avatar verified={user.verified} url={user.avatar.url} />}
+            className={classNames(styles.header)}
+          />
+          <CardMedia
+            component="img"
+            src={mediaUrl}
+            alt={name}
+            className={classNames(styles.media)}
+          ></CardMedia>
+
+          <CardContent className={classNames(styles["not-live-content"])}>
+            <div className={classNames(styles.container)}>
+              <div className={classNames(styles.title)}>{name}</div>
+              <div className={classNames(styles.price)}>
+                {price} {currency}
+              </div>
+            </div>
             <Chip
               className={classNames(styles.likes)}
               icon={<Favorite className={classNames(styles.icon)} />}
-              label={millify(likes)}
+              clickable
+              onClick={() => setLikesNumber(likesNumber + 1)}
+              label={millify(likesNumber, {
+                units: ["", "K", "M"],
+                space: true,
+              })}
+              sx={{ paddingBottom: 0 }}
             ></Chip>
-            <div className={classNames(styles.price)}>
-              {price} {currency}
-            </div>
-          </div>
+          </CardContent>
         </CardTag>
       )}
     </div>

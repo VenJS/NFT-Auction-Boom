@@ -29,21 +29,36 @@ export default function Card({
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
       {timeLeft ? (
-        <CardTag sx={{ maxWidth: 345 }} className={classNames(styles.card)}>
-          <Avatar verified={user.verified} url={user.avatar.url}></Avatar>
+        <CardTag
+          sx={{ width: 345, height: 550 }}
+          className={classNames(styles.card)}
+        >
+          <CardHeader
+            avatar={<Avatar verified={user.verified} url={user.avatar.url} />}
+            className={classNames(styles.header)}
+          />
+          <CardMedia
+            component="img"
+            src={mediaUrl}
+            alt={name}
+            className={classNames(styles.media)}
+          ></CardMedia>
 
-          <img className={classNames(styles.media)} src={mediaUrl} />
           <div className={classNames(styles.badge)}>
-            <FiberManualRecordIcon></FiberManualRecordIcon>
+            <FiberManualRecordIcon fontSize="small"></FiberManualRecordIcon>
             <span>LIVE</span>
           </div>
-          <div className={classNames(styles.container)}>
-            {
-              <div className={classNames(styles.countdown)}>
-                <Countdown date={Date.now() + timeLeft}></Countdown>
+
+          <div className={classNames(styles.countdown)}>
+            <Countdown date={Date.now() + timeLeft}></Countdown>
+          </div>
+          <CardContent className={classNames(styles.content)}>
+            <div className={classNames(styles.container)}>
+              <div className={classNames(styles.title)}>{name}</div>
+              <div className={classNames(styles.price)}>
+                {price} {currency}
               </div>
-            }
-            <div className={classNames(styles.title)}>{name}</div>
+            </div>
             <Chip
               className={classNames(styles.likes)}
               icon={<Favorite className={classNames(styles.icon)} />}
@@ -53,11 +68,9 @@ export default function Card({
                 units: ["", "K", "M"],
                 space: true,
               })}
+              sx={{ paddingBottom: 0 }}
             ></Chip>
-            <div className={classNames(styles.price)}>
-              {price} {currency}
-            </div>
-          </div>
+          </CardContent>
         </CardTag>
       ) : (
         <CardTag sx={{ maxWidth: 345 }}>

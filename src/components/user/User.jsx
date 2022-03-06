@@ -3,9 +3,9 @@ import styles from "./User.module.scss";
 import classNames from "classnames";
 
 export default function User({
-  name = "sdad",
-  info = "asdsa",
-  avatar = "images/avatar.png",
+  name,
+  info,
+  avatar,
   size = 55,
   verified = true,
 }) {

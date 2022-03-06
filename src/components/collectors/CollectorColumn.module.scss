@@ -1,27 +1,20 @@
 @use "../../styles/colors.scss";
 
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    
-}
-
-.container > * {
-    flex-basis: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .light {
-    background-color: rgba(colors.$background_paper, 10%);
-
+  background-color: rgba(colors.$background_paper, 10%);
 }
 
 .dark {
-    background-color: colors.$background_paper;
+  background-color: colors.$background_paper;
 }
 
 .id {
-    
-    padding: 0;
+  padding: 0;
 }

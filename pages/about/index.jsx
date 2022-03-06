@@ -6,14 +6,17 @@ import Link from "../../src/components/link/Link";
 
 export default function About() {
   return (
-    <Container maxWidth="sm">
-      <Grid container justifyContent="center">
-        <Grid item>
-          <Button variant="contained" component={Link} noLinkStyle href="/">
-            🏠 Home
-          </Button>
+    <div>
+      <Container maxWidth="sm">
+        <Grid container justifyContent="center">
+          <Grid item>
+            <Button variant="contained" component={Link} noLinkStyle href="/">
+              🏠 Home
+            </Button>
+          </Grid>
         </Grid>
-      </Grid>
-    </Container>
+      </Container>
+      <div></div>
+    </div>
   );
 }

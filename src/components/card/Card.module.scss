@@ -8,49 +8,31 @@
 }
 
 .header {
+  display: flex;
+  justify-content: flex-start;
   width: 100%;
+  padding: 0 !important;
 }
 
 .media {
-  border-radius: 40px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 1.5rem;
+  height: 300px;
 }
 
-.container {
-  display: grid;
-  grid-template-rows: 30px 1fr 30px;
-  grid-template-columns: 250px 1fr;
-  grid-template-areas:
-    "head head"
-    "nav  main"
-    "nav  foot";
-}
-
-.title {
-  grid-area: head;
-  margin-top: 10px;
-  margin-left: 30px;
-  font-weight: bolder;
-  font-size: 1.5rem;
-}
-
-.price {
-  grid-area: nav;
-
+.badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  background-color: colors.$success_main;
+  color: colors.$background_default;
+  position: relative;
+  right: 105px;
+  bottom: 270px;
   font-weight: bold;
-  font-size: 0.9rem;
-  color: colors.$secondary_main;
-}
-
-.likes {
-  grid-area: main;
-  color: colors.$secondary_main !important;
-  border: 1px solid !important;
-  width: 100px;
-}
-
-.icon {
-  color: colors.$secondary_main !important;
-  justify-content: flex-end;
+  width: 5rem;
 }
 
 .countdown {
@@ -60,23 +42,50 @@
   border-bottom-right-radius: 10px;
   background-color: colors.$success_main;
   color: colors.$background_default;
-
+  font-weight: bold;
+  width: 313px;
   position: relative;
-
-  bottom: 40px;
+  bottom: 51px;
 }
 
-.badge {
+.container {
   display: flex;
-  justify-content: center;
-  border: 1px solid;
-  border-radius: 10px;
-  width: 75px;
-  background-color: colors.$success_main;
-  color: colors.$background_default;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.content {
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+  padding: 0 !important;
   position: relative;
-  bottom: 330px;
-  left: 30px;
-  font-size: 15px;
+  bottom: 2rem;
+}
+
+.title {
+  font-weight: bolder;
+  font-size: 1.5rem;
+}
+
+.price {
   font-weight: bold;
+  font-size: 0.9rem;
+  color: colors.$secondary_main;
+}
+
+.likes {
+  color: colors.$secondary_main !important;
+  border: 1px solid !important;
+  width: 5rem;
+}
+
+.likes:hover {
+  background-color: colors.$text_secondary !important;
+}
+
+.icon {
+  color: colors.$secondary_main !important;
+  justify-content: flex-end;
 }

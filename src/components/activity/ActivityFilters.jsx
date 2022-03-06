@@ -11,12 +11,12 @@ import {
 } from "@mui/material";
 import Search from "@mui/icons-material/Search";
 
-export default function ActivityFilters({filters}) {
+export default function ActivityFilters({ filters }) {
   return (
     <div className={classNames(styles["activity-filters"])}>
       <FormControl className={classNames(styles.selectors)}>
         <Select label="Sort by" className={classNames(styles.select)}>
-        <InputLabel>{filters}</InputLabel>
+          <InputLabel>{filters}</InputLabel>
         </Select>
         <Select label="Type" className={classNames(styles.select)}></Select>
         <TextField
@@ -28,7 +28,7 @@ export default function ActivityFilters({filters}) {
               </InputAdornment>
             ),
           }}
-          variant='standard'
+          variant="standard"
         ></TextField>
       </FormControl>
     </div>

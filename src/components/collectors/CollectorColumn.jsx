@@ -30,9 +30,12 @@ export default function CollectorColumn({
     <div className={classNames(styles.container)}>
       {items.map((item, i) => (
         <Collector
-          key={i}
-          item={item}
+          name={item.name}
+          avatar={item.avatar}
+          verified={item.verified}
+          info={item.nftsCount}
           index={item.id}
+          key={i}
           type={
             i % 2 !== 0 ? classNames(styles.light) : classNames(styles.dark)
           }

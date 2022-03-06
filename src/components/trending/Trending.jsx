@@ -10,15 +10,13 @@ export default function Trending({ cards = [], sort = [] }) {
     <div>
       <Container maxWidth="false" className={classNames(styles.wrapper)}>
         <div className={classNames(styles.trending)}>Trending</div>
-        <Select className={classNames(styles.select)} label="label">
+        <Select className={classNames(styles.select)}>
           {sort.map((arr, i) => (
-            <MenuItem value={arr.value} label={arr.label}>
-              {arr.label}
-            </MenuItem>
+            <MenuItem key={i}>{arr.label}</MenuItem>
           ))}
         </Select>
       </Container>
-      <Grid container spacing={2} className={classNames(styles.container)}>
+      <Grid container spacing={1} className={classNames(styles.container)}>
         {cards.map((card, i) => (
           <Grid item xs={3} key={i}>
             <Card

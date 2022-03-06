@@ -1,17 +1,31 @@
 import User from "../user/User";
 import classNames from "classnames";
-import styles from './Collector.module.scss'
+import styles from "./Collector.module.scss";
 
-export default function Collector({ item, type, index }) {
+export default function Collector({
+  name,
+  avatar,
+  verified,
+  info,
+  type,
+  index,
+}) {
   return (
-    <div className={type}>
+    <div className={classNames(styles.container)}>
       <table>
         <tbody>
           <tr>
             <td className={classNames(styles.index)}>{index}</td>
-            <td>{<User></User>}</td>
-            <td>{item.name}</td>
-            <td className={classNames(styles.nftsCount)}>{item.nftsCount}</td>
+            <td>
+              {
+                <User
+                  avatar={avatar}
+                  name={name}
+                  verified={verified}
+                  info={info}
+                ></User>
+              }
+            </td>
           </tr>
         </tbody>
       </table>

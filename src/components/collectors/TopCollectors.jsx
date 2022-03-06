@@ -12,10 +12,10 @@ import {
 import CollectorColumn from "./CollectorColumn";
 import array from "lodash/array";
 
-export default function TopCollectors({ collectors }) {
+export default function TopCollectors({ collectors, filter = [] }) {
   return (
     <Container maxWidth="xl">
-      <Grid className={classNames(styles.header)} container>
+      <Grid container className={classNames(styles.header)}>
         <Grid item xs={12} sm={12} md={8} lg={6}>
           <Typography variant="h1">Top Collectors</Typography>
         </Grid>
@@ -29,16 +29,16 @@ export default function TopCollectors({ collectors }) {
         >
           <FormControl sx={{ m: 1, minWidth: 200 }}>
             <Select>
-              <MenuItem>This week</MenuItem>
-              <MenuItem>This month</MenuItem>
-              <MenuItem>This year</MenuItem>
+              {filter.map((arr, i) => (
+                <MenuItem key={i}>{arr.label}</MenuItem>
+              ))}
             </Select>
           </FormControl>
         </Grid>
       </Grid>
       <Grid container gap={2}>
-        {array.chunk(collectors, 3).map((collector, index) => (
-          <CollectorColumn key={index} items={collector} />
+        {array.chunk(collectors, 3).map((collector, i) => (
+          <CollectorColumn key={i} items={collector} index={collector.index} />
         ))}
       </Grid>
     </Container>

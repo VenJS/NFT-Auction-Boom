@@ -2,30 +2,33 @@
 
 .wrapper {
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
- 
-  padding-right: 5vw;
+  align-items: center;
+  justify-content: center;
+  height: 180px;
 }
 
 .number {
-  background-color: rgba(colors.$primary_main, 10%);
-  height: 123.83px;
+  background-color: rgba(colors.$background_paper, 90%);
+  height: 180px;
   width: 110px;
   text-align: center;
   vertical-align: middle;
-  line-height: 123.83px;
+  line-height: 180px;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
+  font-size: 3rem;
+  font-weight: bold;
 }
 
-.article {
-  background-color: colors.$background_default;
+.p {
+  background-color: colors.$background_paper;
   inline-size: 450px;
   overflow-wrap: break-word;
-  padding-left: 50px;
+  padding-left: 30px;
+  padding-right: 20px;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
+  height: 100%;
 }
 
 .title {

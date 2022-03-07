@@ -6,7 +6,6 @@ import Auctions from "../src/components/auctions/Auctions";
 import Footer from "../src/components/footer/Footer";
 import TopCollectors from "../src/components/collectors/TopCollectors";
 import { useEffect, useState } from "react";
-import Card from "../src/components/card/Card";
 
 import dataFeatured from "../data/featured.json";
 import dataProfile from "../data/profile.json";

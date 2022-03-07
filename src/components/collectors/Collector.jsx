@@ -10,9 +10,14 @@ export default function Collector({
   type,
   index,
 }) {
+  console.log(type);
   return (
     <div className={classNames(styles.container)}>
-      <table>
+      <table
+        className={
+          type === "light" ? classNames(styles.light) : classNames(styles.dark)
+        }
+      >
         <tbody>
           <tr>
             <td className={classNames(styles.index)}>{index}</td>

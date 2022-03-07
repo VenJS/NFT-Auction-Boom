@@ -14,7 +14,7 @@ export default function Card({
   name = "String",
   likes = 0,
   mediaUrl = "images/nft.jpg",
-  timeLeft = 100000000,
+  timeLeft,
   user = {
     avatar: {
       url: "images/avatar.png",
@@ -26,8 +26,28 @@ export default function Card({
 }) {
   const [likesNumber, setLikesNumber] = useState(likes);
 
+  const Completionist = () => <span>Ended!</span>;
+
+  const renderer = ({ days, hours, minutes, seconds, completed }) => {
+    if (completed) {
+      return <Completionist />;
+    } else {
+      return (
+        <span>
+          {days} days, {hours}:{minutes}:{seconds}
+        </span>
+      );
+    }
+  };
+
   return (
-    <div style={{ display: "flex", justifyContent: "center" }}>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "flex-start",
+      }}
+    >
       {timeLeft ? (
         <CardTag
           sx={{ width: 345, height: 550 }}
@@ -50,7 +70,7 @@ export default function Card({
           </div>
 
           <div className={classNames(styles.countdown)}>
-            <Countdown date={Date.now() + timeLeft}></Countdown>
+            <Countdown date={timeLeft} renderer={renderer}></Countdown>
           </div>
           <CardContent className={classNames(styles.content)}>
             <div className={classNames(styles.container)}>
@@ -81,6 +101,7 @@ export default function Card({
             avatar={<Avatar verified={user.verified} url={user.avatar.url} />}
             className={classNames(styles.header)}
           />
+
           <CardMedia
             component="img"
             src={mediaUrl}

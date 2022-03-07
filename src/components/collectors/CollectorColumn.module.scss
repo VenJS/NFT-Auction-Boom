@@ -5,14 +5,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.light {
-  background-color: rgba(colors.$background_paper, 10%);
-}
-
-.dark {
-  background-color: colors.$background_paper;
+  border-radius: 50px;
 }
 
 .id {

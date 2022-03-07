@@ -14,7 +14,7 @@ export default function User({
       <Avatar url={avatar} verified={verified} />
       <div className={classNames(styles.content)}>
         <div className={classNames(styles.name)}>{name}</div>
-        <div className={classNames(styles.info)}>{info}</div>
+        <div className={classNames(styles.info)}>{info} items</div>
       </div>
     </div>
   );

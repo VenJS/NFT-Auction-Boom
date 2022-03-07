@@ -4,7 +4,7 @@ import Grid from "@mui/material/Grid";
 import LocalFireDepartmentIcon from "@mui/icons-material/LocalFireDepartment";
 import classNames from "classnames";
 import styles from "./Auctions.module.scss";
-import { MenuItem } from "@mui/material";
+import { MenuItem, FormControl, InputLabel } from "@mui/material";
 import Card from "../card/Card";
 
 export default function Auctions({ cards = [], filter = [] }) {
@@ -18,11 +18,14 @@ export default function Auctions({ cards = [], filter = [] }) {
           ></LocalFireDepartmentIcon>
           <h1 className={classNames(styles.liveAuction)}>Live Auctions</h1>
         </div>
-        <Select className={classNames(styles.select)}>
-          {filter.map((arr, i) => (
-            <MenuItem key={i}>{arr.label}</MenuItem>
-          ))}
-        </Select>
+        <FormControl sx={{ m: 1, minWidth: 200, marginRight: "3rem" }}>
+          <InputLabel>Price range</InputLabel>
+          <Select className={classNames(styles.select)}>
+            {filter.map((arr, i) => (
+              <MenuItem key={i}>{arr.label}</MenuItem>
+            ))}
+          </Select>
+        </FormControl>
       </Container>
       <Grid container spacing={1}>
         {cards.map((card, i) => (
@@ -36,10 +39,10 @@ export default function Auctions({ cards = [], filter = [] }) {
               name={card.name}
               like={card.likes}
               mediaUrl={card.mediaUrl}
-              timeLeft={card.timeLeft}
+              timeLeft={card["auction_end"]}
               price={card.price}
               currency={card.currency}
-              user={card.user}
+              user={card.owner}
             ></Card>
           </Grid>
         ))}

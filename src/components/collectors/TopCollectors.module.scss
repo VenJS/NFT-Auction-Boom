@@ -1,3 +1,5 @@
+@use "../../styles/colors.scss";
+
 .wrapper {
   display: flex !important;
   justify-content: space-between;
@@ -17,4 +19,12 @@
 .container {
   display: flex;
   justify-content: center;
+}
+
+.elements {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 300px;
+  overflow: hidden;
 }

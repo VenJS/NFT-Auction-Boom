@@ -18,9 +18,11 @@
 }
 
 .light {
-  background-color: rgba(colors.$background_paper, 10%);
+  background-color: colors.$background_paper_light;
+  border-spacing: 0;
 }
 
 .dark {
   background-color: colors.$background_paper;
+  border-spacing: 0;
 }

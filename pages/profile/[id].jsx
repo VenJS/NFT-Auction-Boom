@@ -6,8 +6,30 @@ import Footer from "../../src/components/footer/Footer";
 import profile from "../../data/profile.json";
 import classNames from "classnames";
 import styles from "./[id].module.scss";
+import { useState, useEffect } from "react";
 
 export default function Profile() {
+  let url = process.env.apiUrl;
+
+  const [profile, setProfile] = useState();
+  const [profileFilters, setProfileFilters] = useState();
+
+  useEffect(async () => {
+    const result = await fetch("https://nft-auction.herokuapp.com/users/367")
+      .then((response) => response.json())
+      .then((res) => res);
+    setProfile(result);
+  }, []);
+
+  useEffect(async () => {
+    const result = await fetch("https://nft-auction.herokuapp.com/users/367")
+      .then((response) => response.json())
+      .then((res) => res.filters);
+    setProfileFilters(result);
+  }, []);
+
+  console.log(profile);
+  console.log(profileFilters);
   return (
     <div className={classNames(styles.wrapper)}>
       <Header></Header>
@@ -16,7 +38,10 @@ export default function Profile() {
         name="Ramsey"
         info="It is never crowded along the extra mile"
       ></ProfileUser>
-      <ProfileCollection></ProfileCollection>
+      <ProfileCollection
+        user={profile}
+        filters={profileFilters}
+      ></ProfileCollection>
       <Footer></Footer>
     </div>
   );

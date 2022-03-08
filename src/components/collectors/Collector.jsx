@@ -10,7 +10,6 @@ export default function Collector({
   type,
   index,
 }) {
-  console.log(type);
   return (
     <div className={classNames(styles.container)}>
       <table

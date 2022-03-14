@@ -1,11 +1,11 @@
-import Header from "../../src/components/header/Header";
-import ProfileHero from "../../src/components/profile/ProfileHero";
-import ProfileUser from "../../src/components/profile/ProfileUser";
-import ProfileCollection from "../../src/components/profile/ProfileCollection";
-import Footer from "../../src/components/footer/Footer";
-import profile from "../../data/profile.json";
+import Header from "../../../src/components/header/Header";
+import ProfileHero from "../../../src/components/profile/ProfileHero";
+import ProfileUser from "../../../src/components/profile/ProfileUser";
+import ProfileCollection from "../../../src/components/profile/ProfileCollection";
+import Footer from "../../../src/components/footer/Footer";
+import profile from "../../../data/profile.json";
 import classNames from "classnames";
-import styles from "./[id].module.scss";
+import styles from "./ProfilePage.module.scss";
 import { useState, useEffect } from "react";
 
 export default function Profile() {
@@ -27,6 +27,8 @@ export default function Profile() {
       .then((res) => res.filters);
     setProfileFilters(result);
   }, []);
+
+  console.log(profile);
 
   return (
     <div className={classNames(styles.wrapper)}>

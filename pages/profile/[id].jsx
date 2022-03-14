@@ -28,8 +28,6 @@ export default function Profile() {
     setProfileFilters(result);
   }, []);
 
-  console.log(profile);
-  console.log(profileFilters);
   return (
     <div className={classNames(styles.wrapper)}>
       <Header></Header>

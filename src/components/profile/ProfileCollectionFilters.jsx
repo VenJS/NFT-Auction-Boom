@@ -11,14 +11,11 @@ import {
 } from "@mui/material";
 import Search from "@mui/icons-material/Search";
 
-export default function ProfileCollectionFilters({filters}) {
+export default function ProfileCollectionFilters({ filters }) {
   return (
     <div className={classNames(styles["profile-collection-filters"])}>
       <FormControl className={classNames(styles["form-control"])}>
-        <Select
-          autoWidth="true"
-          label="Sort by"
-        >
+        <Select autoWidth={true} label="Sort by">
           <InputLabel>{filters}</InputLabel>
         </Select>
       </FormControl>
@@ -29,11 +26,10 @@ export default function ProfileCollectionFilters({filters}) {
         className={classNames(styles["search-bar"])}
         InputProps={{
           startAdornment: (
-            <InputAdornment position="start" >
+            <InputAdornment position="start">
               <Search></Search>
             </InputAdornment>
           ),
-
         }}
       ></TextField>
     </div>

@@ -8,45 +8,8 @@ import User from "../user/User";
 
 export default function ProfileCollection({
   user = { name: "J", info: "someInfo" },
-  filters = "name",
-  items = [
-    {
-      name: "String",
-      likes: 0,
-      user: "Jonny",
-      mediaUrl: "images/nft.jpg",
-      timeLeft: 100000000,
-      price: "~12.2",
-      currency: "BTC",
-    },
-    {
-      name: "String",
-      likes: 0,
-      user: "Ronny",
-      mediaUrl: "images/nft.jpg",
-      timeLeft: 100000000,
-      price: "~12.2",
-      currency: "ETH",
-    },
-    {
-      name: "String",
-      likes: 0,
-      user: "Tom",
-      mediaUrl: "images/nft.jpg",
-      timeLeft: 100000000,
-      price: "~12.2",
-      currency: "LTC",
-    },
-    {
-      name: "String",
-      likes: 0,
-      user: "Mike",
-      mediaUrl: "images/nft.jpg",
-      timeLeft: 100000000,
-      price: "~12.2",
-      currency: "BNB",
-    },
-  ],
+  filters,
+  items = [],
 }) {
   return (
     <div className={classNames(styles["profile-collection"])}>
@@ -61,14 +24,15 @@ export default function ProfileCollection({
           ></ProfileCollectionFilters>
         </Grid>
       </Grid>
-      <Grid
-        container
-        spacing={1}	
-      >
-        
-          {items.map((item, i) => {
-            return (
-              <Grid item xs={3} className={classNames(styles["card-wrapper"])}>
+      <Grid container spacing={1}>
+        {items.map((item, i) => {
+          return (
+            <Grid
+              item
+              xs={3}
+              className={classNames(styles["card-wrapper"])}
+              key={i}
+            >
               <Card
                 key={i}
                 name={item.name}
@@ -79,10 +43,9 @@ export default function ProfileCollection({
                 price={item.price}
                 currency={item.currency}
               ></Card>
-              </Grid>
-            );
-          })}
-        
+            </Grid>
+          );
+        })}
       </Grid>
     </div>
   );

@@ -7,28 +7,32 @@ import profile from "../../../data/profile.json";
 import classNames from "classnames";
 import styles from "./ProfilePage.module.scss";
 import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 
 export default function Profile() {
   let url = process.env.apiUrl;
+
+  const router = useRouter();
 
   const [profile, setProfile] = useState();
   const [profileFilters, setProfileFilters] = useState();
 
   useEffect(async () => {
-    const result = await fetch("https://nft-auction.herokuapp.com/users/367")
+    const result = await fetch("https://nft-auction.herokuapp.com/users/{id}")
       .then((response) => response.json())
       .then((res) => res);
     setProfile(result);
   }, []);
 
   useEffect(async () => {
-    const result = await fetch("https://nft-auction.herokuapp.com/users/367")
+    const result = await fetch("https://nft-auction.herokuapp.com/users/{id}")
       .then((response) => response.json())
       .then((res) => res.filters);
     setProfileFilters(result);
   }, []);
 
   console.log(profile);
+  console.log(profileFilters);
 
   return (
     <div className={classNames(styles.wrapper)}>

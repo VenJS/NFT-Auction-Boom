@@ -18,14 +18,14 @@ export default function Profile() {
   const [profileFilters, setProfileFilters] = useState();
 
   useEffect(async () => {
-    const result = await fetch("https://nft-auction.herokuapp.com/users/{id}")
+    const result = await fetch("https://nft-auction.herokuapp.com/users/401")
       .then((response) => response.json())
       .then((res) => res);
     setProfile(result);
   }, []);
 
   useEffect(async () => {
-    const result = await fetch("https://nft-auction.herokuapp.com/users/{id}")
+    const result = await fetch("https://nft-auction.herokuapp.com/users/401")
       .then((response) => response.json())
       .then((res) => res.filters);
     setProfileFilters(result);

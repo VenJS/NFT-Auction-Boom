@@ -21,9 +21,24 @@ export default function Header() {
         </Grid>
         <Grid item xs={4}>
           <Container className={classNames(styles.container)}>
-            <Button className={classNames(styles.paper)}> Home </Button>
-            <Button className={classNames(styles.paper)}> Activity </Button>
-            <Button className={classNames(styles.paperExplore)}>
+            <Button
+              className={classNames(styles.paper)}
+              onClick={(event) => (window.location.href = "/")}
+            >
+              {" "}
+              Home{" "}
+            </Button>
+            <Button
+              className={classNames(styles.paper)}
+              onClick={(event) => (window.location.href = "/activity")}
+            >
+              {" "}
+              Activity{" "}
+            </Button>
+            <Button
+              className={classNames(styles.paperExplore)}
+              onClick={(event) => (window.location.href = "/explore")}
+            >
               {" "}
               Explore{" "}
             </Button>

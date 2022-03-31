@@ -3,6 +3,7 @@ import Hero from "../../src/components/hero/Hero";
 import ActivityFilters from "../../src/components/activity/ActivityFilters";
 import ActivityList from "../../src/components/activity/ActivityList";
 import Footer from "../../src/components/footer/Footer";
+
 import dataActivity from "../../data/activity.json";
 import { useState, useEffect } from "react";
 
@@ -30,7 +31,7 @@ export default function Activity({ name, mediaU }) {
     <div>
       <Header></Header>
       <Hero text="Activity" />
-      <ActivityFilters></ActivityFilters>
+      <ActivityFilters filters={activityFilters}></ActivityFilters>
       <ActivityList items={activity}></ActivityList>
       <Footer></Footer>
     </div>

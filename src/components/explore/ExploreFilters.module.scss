@@ -1,8 +1,14 @@
 .explore-filters {
-    background-color: red;
+    display: flex;
     padding: 25px;
+    margin: 100px 0px 0px 100px;
 }
 
 .selectors {
     width: 25%;
+    margin-right: 25px !important;
+}
+
+.search-bar {
+    width: 45%;
 }

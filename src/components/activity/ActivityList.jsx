@@ -9,17 +9,17 @@ export default function ActivityList({
       created_at: "2022-02-06T22:18:15",
       user: {
         avatar: {
-          url: 'String',
+          url: "String",
         },
         verified: true,
-        name: 'String',
+        name: "String",
       },
       nft: {
-        name: 'String',
+        name: "String",
         owner: {
-          username: 'String',
+          username: "String",
           avatar: {
-            url: 'String',
+            url: "String",
           },
           verified: true,
         },
@@ -30,17 +30,17 @@ export default function ActivityList({
       created_at: "2022-02-14T22:18:15",
       user: {
         avatar: {
-          url: 'String',
+          url: "String",
         },
         verified: true,
-        name: 'String',
+        name: "String",
       },
       nft: {
-        name: 'String',
+        name: "String",
         owner: {
-          username: 'String',
+          username: "String",
           avatar: {
-            url: 'String',
+            url: "String",
           },
           verified: true,
         },
@@ -51,17 +51,17 @@ export default function ActivityList({
       created_at: "2022-02-09T22:18:15",
       user: {
         avatar: {
-          url: 'String',
+          url: "String",
         },
         verified: true,
-        name: 'String',
+        name: "String",
       },
       nft: {
-        name: 'String',
+        name: "String",
         owner: {
-          username: 'String',
+          username: "String",
           avatar: {
-            url: 'String',
+            url: "String",
           },
           verified: true,
         },
@@ -70,13 +70,18 @@ export default function ActivityList({
     },
   ],
 }) {
-  items.map((item, i) => { console.log(item.type)})
   return (
     <div className={classNames(styles["activity-list"])}>
       <Stack spacing={2} direction="column">
-        {items.map((item, i) => 
-           <ActivityListItem type={item.type} key={i}></ActivityListItem>
-      )}
+        {items.map((item, i) => (
+          <ActivityListItem
+            type={item.type}
+            created_at={item.created_at}
+            user={item.user}
+            nft={item.nft}
+            key={i}
+          ></ActivityListItem>
+        ))}
       </Stack>
     </div>
   );

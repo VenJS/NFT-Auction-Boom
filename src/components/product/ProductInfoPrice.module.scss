@@ -1,5 +1,8 @@
+@use "../../styles/colors.scss";
+
 .product-info-price {
   display: flex;
   justify-content: center;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 0.9rem;
+  color: colors.$text_disabled;
 }

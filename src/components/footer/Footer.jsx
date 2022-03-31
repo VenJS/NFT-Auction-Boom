@@ -8,15 +8,15 @@ import styles from "./Footer.module.scss";
 export default function Footer() {
   return (
     <Grid container className={classNames(styles.container)} spacing={2}>
-      <Grid item xs={4}>
+      <Grid item xs={4} sx={{ paddingTop: "12px !important" }}>
         <Logo type="muted"></Logo>
       </Grid>
       <Grid item xs={4}>
-          <p>Bum All Rigths Reserved 2022</p>
+        <p>Bum All Rigths Reserved 2022</p>
       </Grid>
       <Grid item xs={4} className={classNames(styles.wrapper)}>
-          <Button className={classNames(styles.buttons)}>Privacy Policy </Button>
-          <Button className={classNames(styles.buttons)}>Cookie Policy </Button>
+        <Button className={classNames(styles.buttons)}>Privacy Policy </Button>
+        <Button className={classNames(styles.buttons)}>Cookie Policy </Button>
       </Grid>
     </Grid>
   );

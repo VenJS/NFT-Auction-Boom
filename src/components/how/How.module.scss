@@ -25,6 +25,10 @@
   width: 180px;
 }
 
+.button:hover {
+  background-color: colors.$primary_main !important;
+}
+
 .steps {
   position: relative;
   bottom: 570px;

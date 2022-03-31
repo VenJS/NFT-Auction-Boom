@@ -35,7 +35,7 @@ export default function ProductInfo({
           ></ProductInfoLikes>
         </div>
       </Stack>
-      <Grid container spacing={{ xs: 16 }}>
+      <Grid container spacing={2}>
         <Grid item xs={7}>
           <ProductInfoCreator name={creator.name} />
         </Grid>

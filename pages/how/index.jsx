@@ -7,7 +7,7 @@ export default function How() {
   return (
     <div>
       <Header></Header>
-      <Hero text="Blind Doggo"></Hero>
+      <Hero text="How it works"></Hero>
       <Description
         text="Lorem ipsum odor amet, consectetuer adipiscing elit. Ac purus in massa egestas mollis varius;
     dignissim elementum. Mollis tincidunt mattis hendrerit dolor eros enim, nisi ligula ornare.

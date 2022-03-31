@@ -5,11 +5,10 @@ import ProductActions from "./ProductActions";
 import ProductImage from "./ProductImage";
 import ProductInfo from "./ProductInfo";
 import ProductTabs from "./ProductTabs";
-import { useRouter } from 'next/router'
-
+import { useRouter } from "next/router";
 
 export default function ProductContainer({
-  name = "Gentleman from Valhalla",
+  name = "Gentleman ",
   owner = "Murphy",
   price = 25,
   currency = "LTC",
@@ -19,7 +18,6 @@ export default function ProductContainer({
   bids,
   source,
 }) {
-
   const router = useRouter();
   console.log(router.query);
 

@@ -9,7 +9,7 @@ import Card from "../card/Card";
 
 export default function Auctions({ cards = [], filter = [] }) {
   return (
-    <div>
+    <div className={classNames(styles["auction-container"])}>
       <Container className={classNames(styles.container)}>
         <div className={classNames(styles.wrapper)}>
           <LocalFireDepartmentIcon

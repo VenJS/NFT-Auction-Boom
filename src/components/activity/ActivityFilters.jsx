@@ -11,26 +11,37 @@ import {
 } from "@mui/material";
 import Search from "@mui/icons-material/Search";
 
-export default function ActivityFilters({ filters }) {
+export default function ActivityFilters({ filters = [] }) {
   return (
     <div className={classNames(styles["activity-filters"])}>
-      <FormControl className={classNames(styles.selectors)}>
-        <Select label="Sort by" className={classNames(styles.select)}>
-          <InputLabel>{filters}</InputLabel>
+      <FormControl sx={{ m: 1, minWidth: 350 }}>
+        <InputLabel>Sort by</InputLabel>
+        <Select className={classNames(styles.select)}>
+          {filters.map((arr, i) => (
+            <MenuItem key={i}>{arr.label}</MenuItem>
+          ))}
         </Select>
-        <Select label="Type" className={classNames(styles.select)}></Select>
-        <TextField
-          className={classNames(styles["search-bar"])}
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <Search></Search>
-              </InputAdornment>
-            ),
-          }}
-          variant="standard"
-        ></TextField>
       </FormControl>
+      <FormControl sx={{ m: 1, minWidth: 350 }}>
+        <InputLabel>Type</InputLabel>
+        <Select className={classNames(styles.select)}>
+          {filters.map((arr, i) => (
+            <MenuItem key={i}>{arr.value}</MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+
+      <TextField
+        className={classNames(styles["search-bar"])}
+        InputProps={{
+          startAdornment: (
+            <InputAdornment position="start">
+              <Search></Search>
+            </InputAdornment>
+          ),
+        }}
+        variant="standard"
+      ></TextField>
     </div>
   );
 }

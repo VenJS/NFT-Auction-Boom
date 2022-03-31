@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import Button from "@mui/material/Button";
 import { Grid } from "@mui/material";
 import Step from "./Step.jsx";
 import classNames from "classnames";
@@ -24,7 +24,7 @@ export default function How({
         "Let's connect your wallet to BUM, edit your profile and begin interacting in the space.",
     },
   ],
-  link = "https://www.youtube.com/",
+  link = "/how",
 }) {
   return (
     <div style={{ maxHeight: "650px" }}>
@@ -42,7 +42,10 @@ export default function How({
             {description}
           </Grid>
           <Grid item xs={4}>
-            <Button className={classNames(styles.button)} href={link}>
+            <Button
+              className={classNames(styles.button)}
+              onClick={(event) => (window.location.href = "/how")}
+            >
               LEARN MORE
             </Button>
           </Grid>

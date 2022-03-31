@@ -35,7 +35,7 @@ export default function ProductTabs({
   return (
     <div className={classNames(styles["product-tabs"])}>
       <TabContext value="0">
-        <Box sx={{ borderBottom: 3 }}>
+        <Box sx={{ borderBottom: 2 }}>
           <Tabs value={selectedTab} onChange={handleChange}>
             <Tab
               label="Details"

@@ -1,7 +1,8 @@
 @use "../../styles/colors.scss";
 
 .container {
-  padding-top: 100px;
+  background-color: colors.$background_paper;
+  padding-left: 50px;
 }
 
 .buttons {

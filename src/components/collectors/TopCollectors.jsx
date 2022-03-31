@@ -18,7 +18,7 @@ export default function TopCollectors({ collectors, filter = [] }) {
     <div style={{ margin: "150px 50px 250px 50px" }}>
       <Container maxWidth="false">
         <Grid container>
-          <Grid item xs={6}>
+          <Grid item xs={6} style={{ marginBottom: "50px" }}>
             <Typography variant="h1">Top Collectors</Typography>
           </Grid>
           <Grid

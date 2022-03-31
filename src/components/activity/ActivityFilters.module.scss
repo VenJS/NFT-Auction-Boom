@@ -6,13 +6,6 @@
   bottom: 100px;
 }
 
-.selectors {
-  width: 50%;
-  display: flex;
-  flex-direction: row !important;
-  justify-content: space-around;
-  align-items: center;
-}
 
 .search-bar {
   background-color: #181828;
@@ -20,9 +13,9 @@
 }
 
 .select {
-  margin: 25px 50px;
+  margin: 25px 25px !important;
+  width: 15%;
 }
 
-.image {
-  width: 100%;
-}
+
+

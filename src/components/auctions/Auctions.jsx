@@ -6,8 +6,25 @@ import classNames from "classnames";
 import styles from "./Auctions.module.scss";
 import { MenuItem, FormControl, InputLabel } from "@mui/material";
 import Card from "../card/Card";
+import { useState } from "react";
+import { makeStyles } from "@mui/styles";
+
+const color = "white";
+const useStyles = makeStyles(() => ({
+  icon: {
+    fill: color,
+  },
+}));
 
 export default function Auctions({ cards = [], filter = [] }) {
+  const [value, setValue] = useState();
+
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
+
+  const classes = useStyles();
+
   return (
     <div className={classNames(styles["auction-container"])}>
       <Container className={classNames(styles.container)}>
@@ -20,9 +37,20 @@ export default function Auctions({ cards = [], filter = [] }) {
         </div>
         <FormControl sx={{ m: 1, minWidth: 200, marginRight: "3rem" }}>
           <InputLabel>Price range</InputLabel>
-          <Select className={classNames(styles.select)}>
+          <Select
+            className={classNames(styles.select)}
+            value={value}
+            onChange={handleChange}
+            inputProps={{
+              classes: {
+                icon: classes.icon,
+              },
+            }}
+          >
             {filter.map((arr, i) => (
-              <MenuItem key={i}>{arr.label}</MenuItem>
+              <MenuItem key={i} value={i}>
+                {arr.label}
+              </MenuItem>
             ))}
           </Select>
         </FormControl>

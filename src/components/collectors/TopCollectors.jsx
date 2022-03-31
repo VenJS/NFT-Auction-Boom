@@ -12,8 +12,25 @@ import {
 } from "@mui/material";
 import CollectorColumn from "./CollectorColumn";
 import array from "lodash/array";
+import { useState } from "react";
+import { makeStyles } from "@mui/styles";
+
+const color = "white";
+const useStyles = makeStyles(() => ({
+  icon: {
+    fill: color,
+  },
+}));
 
 export default function TopCollectors({ collectors, filter = [] }) {
+  const [val, setValue] = useState();
+
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
+
+  const classes = useStyles();
+
   return (
     <div style={{ margin: "150px 50px 250px 50px" }}>
       <Container maxWidth="false">
@@ -28,9 +45,19 @@ export default function TopCollectors({ collectors, filter = [] }) {
           >
             <FormControl sx={{ m: 1, minWidth: 200 }}>
               <InputLabel>Sort by</InputLabel>
-              <Select>
+              <Select
+                value={val}
+                onChange={handleChange}
+                inputProps={{
+                  classes: {
+                    icon: classes.icon,
+                  },
+                }}
+              >
                 {filter.map((arr, i) => (
-                  <MenuItem key={i}>{arr.label}</MenuItem>
+                  <MenuItem key={i} value={i}>
+                    {arr.label}
+                  </MenuItem>
                 ))}
               </Select>
             </FormControl>

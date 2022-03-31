@@ -18,7 +18,7 @@ export default function ActivityListItem({
     owner: {
       username: "Antonio",
       avatar: {
-        url: 'String',
+        url: "String",
       },
       verified: true,
     },
@@ -29,13 +29,23 @@ export default function ActivityListItem({
     <div className={classNames(styles["activity-list-item"])}>
       <div className={classNames(styles.wrapper)}>
         <Avatar verified={user.verified} url={user.avatar.url}></Avatar>
-        <div>{user.name}</div>
-        {type == "like" ? <p>liked</p> : <p>bought</p>}
-        <Link href="/">{nft.name} </Link>
-        <span>by</span>
-        <Link href="/"> {nft.owner.username}</Link>
+        <div className={classNames(styles.content)}>
+          <span className={classNames(styles.owner)}>{nft.owner.username}</span>
+          {type == "like" ? (
+            <span className={classNames(styles.liked)}> liked </span>
+          ) : (
+            <span className={classNames(styles.liked)}> bought </span>
+          )}
+          <Link href="/" className={classNames(styles.link)}>
+            {nft.name}
+          </Link>
+          <span className={classNames(styles.liked)}> by</span>
+          <Link href="/" className={classNames(styles.link)}>
+            {nft.owner.username}
+          </Link>
+        </div>
       </div>
-      <div>
+      <div className={classNames(styles.date)}>
         {formatDistance(parseISO(created_at), new Date())} ago
       </div>
     </div>

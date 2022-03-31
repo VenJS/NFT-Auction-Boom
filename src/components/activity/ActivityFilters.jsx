@@ -5,28 +5,62 @@ import {
   Select,
   InputLabel,
   MenuItem,
-  Stack,
   TextField,
   InputAdornment,
 } from "@mui/material";
 import Search from "@mui/icons-material/Search";
+import { useState } from "react";
+import { makeStyles } from "@mui/styles";
+
+const color = "white";
+const useStyles = makeStyles(() => ({
+  icon: {
+    fill: color,
+  },
+}));
 
 export default function ActivityFilters({ filters = [] }) {
+  const [sortValue, setSortValue] = useState();
+
+  const handleChange = (event) => setSortValue(event.target.value);
+
+  const classes = useStyles();
+
   return (
     <div className={classNames(styles["activity-filters"])}>
-      <FormControl sx={{ m: 1, minWidth: 350 }}>
+      <FormControl className={classNames(styles.select)}>
         <InputLabel>Sort by</InputLabel>
-        <Select className={classNames(styles.select)}>
+        <Select
+          value={sortValue}
+          onChange={handleChange}
+          inputProps={{
+            classes: {
+              icon: classes.icon,
+            },
+          }}
+        >
           {filters.map((arr, i) => (
-            <MenuItem key={i}>{arr.label}</MenuItem>
+            <MenuItem key={i} value={i}>
+              {arr.label}
+            </MenuItem>
           ))}
         </Select>
       </FormControl>
-      <FormControl sx={{ m: 1, minWidth: 350 }}>
+      <FormControl className={classNames(styles.select)}>
         <InputLabel>Type</InputLabel>
-        <Select className={classNames(styles.select)}>
+        <Select
+          value={sortValue}
+          onChange={handleChange}
+          inputProps={{
+            classes: {
+              icon: classes.icon,
+            },
+          }}
+        >
           {filters.map((arr, i) => (
-            <MenuItem key={i}>{arr.value}</MenuItem>
+            <MenuItem key={i} value={i}>
+              {arr.value}
+            </MenuItem>
           ))}
         </Select>
       </FormControl>
@@ -36,11 +70,11 @@ export default function ActivityFilters({ filters = [] }) {
         InputProps={{
           startAdornment: (
             <InputAdornment position="start">
-              <Search></Search>
+              <Search sx={{ color: "white" }}></Search>
             </InputAdornment>
           ),
         }}
-        variant="standard"
+        variant="outlined"
       ></TextField>
     </div>
   );

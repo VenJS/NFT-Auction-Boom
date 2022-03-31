@@ -1,4 +1,39 @@
+@use '../../styles/colors.scss';
+
 .wrapper {
     display: flex;
     flex-direction: row;
+}
+
+.activity-list-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: colors.$background_paper;
+    border-radius: 20px;
+}
+
+.date {
+    font-size: 0.8rem;
+    position: relative;
+    top: 25px;
+    right: 480px;
+    color: colors.$text_disabled;
+}
+
+.owner {
+    font-weight: bold;
+}
+
+.liked {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.link {
+    color: colors.$info_main !important;
+}
+
+.content {
+    display: flex;
+    align-items: center;
 }

@@ -4,17 +4,45 @@ import Grid from "@mui/material/Grid";
 import { Container } from "@mui/material";
 import classNames from "classnames";
 import styles from "./Trending.module.scss";
+import { useState } from "react";
+import { makeStyles } from "@mui/styles";
+
+const color = "white";
+const useStyles = makeStyles(() => ({
+  icon: {
+    fill: color,
+  },
+}));
 
 export default function Trending({ cards = [], sort = [] }) {
+  const [val, setValue] = useState();
+
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
+
+  const classes = useStyles();
+
   return (
     <div>
       <Container maxWidth="false" className={classNames(styles.wrapper)}>
         <div className={classNames(styles.trending)}>Trending</div>
         <FormControl sx={{ m: 1, minWidth: 200 }}>
           <InputLabel>Select</InputLabel>
-          <Select className={classNames(styles.select)}>
+          <Select
+            className={classNames(styles.select)}
+            value={val}
+            onChange={handleChange}
+            inputProps={{
+              classes: {
+                icon: classes.icon,
+              },
+            }}
+          >
             {sort.map((arr, i) => (
-              <MenuItem key={i}>{arr.label}</MenuItem>
+              <MenuItem key={i} value={i}>
+                {arr.label}
+              </MenuItem>
             ))}
           </Select>
         </FormControl>

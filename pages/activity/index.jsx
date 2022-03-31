@@ -27,6 +27,8 @@ export default function Activity({ name, mediaU }) {
     setActivityFilters(result);
   }, []);
 
+  console.log(activity);
+
   return (
     <div>
       <Header></Header>

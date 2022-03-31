@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import MenuItem from "@mui/material/MenuItem";
 import Search from "@mui/icons-material/Search";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { makeStyles } from "@mui/styles";
 
 const color = "white";
@@ -23,6 +23,22 @@ export default function ExploreFilters({ filters = [], prices = [] }) {
   const classes = useStyles();
 
   const [value, setValue] = useState();
+  const [nftFilters, setNftFilters] = useState();
+  const [nftPrices, setNftPrices] = useState();
+
+  useEffect(async () => {
+    const result = await fetch("https://nft-auction.herokuapp.com/explore")
+      .then((response) => response.json())
+      .then((res) => res.filters.sort);
+    setNftFilters(result);
+  }, []);
+
+  useEffect(async () => {
+    const result = await fetch("https://nft-auction.herokuapp.com/explore")
+      .then((response) => response.json())
+      .then((res) => res.filters.price);
+    setNftPrices(result);
+  }, []);
 
   const handleChange = (event) => {
     setValue(event.target.value);

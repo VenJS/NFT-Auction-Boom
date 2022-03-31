@@ -23,14 +23,17 @@
 
 .owner {
     font-weight: bold;
+    margin: 0.3rem;
 }
 
 .liked {
     font-family: 'Courier New', Courier, monospace;
+    margin: 0.3rem;
 }
 
 .link {
     color: colors.$info_main !important;
+    margin: 0.3rem;
 }
 
 .content {

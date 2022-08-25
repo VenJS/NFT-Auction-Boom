@@ -15,7 +15,7 @@ const useStyles = makeStyles(() => ({
 }));
 
 export default function Trending({ cards = [], sort = [] }) {
-  const [val, setValue] = useState();
+  const [val, setValue] = useState("");
 
   const handleChange = (event) => {
     setValue(event.target.value);
@@ -33,11 +33,6 @@ export default function Trending({ cards = [], sort = [] }) {
             className={classNames(styles.select)}
             value={val}
             onChange={handleChange}
-            inputProps={{
-              classes: {
-                icon: classes.icon,
-              },
-            }}
           >
             {sort.map((arr, i) => (
               <MenuItem key={i} value={i}>

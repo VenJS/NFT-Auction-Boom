@@ -44,7 +44,7 @@ export default function How({
           <Grid item xs={4}>
             <Button
               className={classNames(styles.button)}
-              onClick={(event) => (window.location.href = "/how")}
+              onClick={() => (window.location.href = "/how")}
             >
               LEARN MORE
             </Button>

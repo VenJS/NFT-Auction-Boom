@@ -8,6 +8,7 @@ import classNames from "classnames";
 import styles from "./ProfilePage.module.scss";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import axios from "axios";
 
 export default function Profile() {
   let url = process.env.apiUrl;
@@ -18,17 +19,17 @@ export default function Profile() {
   const [profileFilters, setProfileFilters] = useState();
 
   useEffect(async () => {
-    const result = await fetch("https://nft-auction.herokuapp.com/users/401")
-      .then((response) => response.json())
-      .then((res) => res);
-    setProfile(result);
+    const result = await axios.get(
+      "https://nft-auction.herokuapp.com/users/401"
+    );
+    setProfile(result.data.user);
   }, []);
 
   useEffect(async () => {
-    const result = await fetch("https://nft-auction.herokuapp.com/users/401")
-      .then((response) => response.json())
-      .then((res) => res.filters);
-    setProfileFilters(result);
+    const result = await axios.get(
+      "https://nft-auction.herokuapp.com/users/401"
+    );
+    setProfileFilters(result.data.filters);
   }, []);
 
   console.log(profile);
@@ -38,12 +39,9 @@ export default function Profile() {
     <div className={classNames(styles.wrapper)}>
       <Header></Header>
       <ProfileHero></ProfileHero>
-      <ProfileUser
-        name="Ramsey"
-        info="It is never crowded along the extra mile"
-      ></ProfileUser>
+      <ProfileUser name={profile.name} info={profile.info}></ProfileUser>
       <ProfileCollection
-        user={profile}
+        user={profile.name}
         filters={profileFilters}
       ></ProfileCollection>
       <Footer></Footer>

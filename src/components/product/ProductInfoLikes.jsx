@@ -12,7 +12,7 @@ export default function ProductInfoLikes({ amount = 0 }) {
         label={millify(amount)}
         variant="outlined"
         icon={<Favorite className={classNames(styles.icon)}></Favorite>}
-        clickable="true"
+        clickable={true}
       ></Chip>
     </div>
   );

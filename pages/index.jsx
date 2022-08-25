@@ -7,11 +7,6 @@ import Footer from "../src/components/footer/Footer";
 import TopCollectors from "../src/components/collectors/TopCollectors";
 import { useEffect, useState } from "react";
 
-import dataFeatured from "../data/featured.json";
-import dataProfile from "../data/profile.json";
-import dataTrending from "../data/trending.json";
-import dataUsers from "../data/users.json";
-
 export default function Index() {
   const [featuredCards, setFeaturedCards] = useState();
   const [trendingItems, setTrendingItems] = useState();

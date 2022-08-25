@@ -20,7 +20,7 @@ const useStyles = makeStyles(() => ({
 }));
 
 export default function ActivityFilters({ filters = [] }) {
-  const [sortValue, setSortValue] = useState();
+  const [sortValue, setSortValue] = useState("");
 
   const handleChange = (event) => setSortValue(event.target.value);
 
@@ -30,15 +30,7 @@ export default function ActivityFilters({ filters = [] }) {
     <div className={classNames(styles["activity-filters"])}>
       <FormControl className={classNames(styles.select)}>
         <InputLabel>Sort by</InputLabel>
-        <Select
-          value={sortValue}
-          onChange={handleChange}
-          inputProps={{
-            classes: {
-              icon: classes.icon,
-            },
-          }}
-        >
+        <Select value={sortValue} onChange={handleChange}>
           {filters.map((arr, i) => (
             <MenuItem key={i} value={i}>
               {arr.label}
@@ -48,15 +40,7 @@ export default function ActivityFilters({ filters = [] }) {
       </FormControl>
       <FormControl className={classNames(styles.select)}>
         <InputLabel>Type</InputLabel>
-        <Select
-          value={sortValue}
-          onChange={handleChange}
-          inputProps={{
-            classes: {
-              icon: classes.icon,
-            },
-          }}
-        >
+        <Select value={sortValue} onChange={handleChange}>
           {filters.map((arr, i) => (
             <MenuItem key={i} value={i}>
               {arr.value}

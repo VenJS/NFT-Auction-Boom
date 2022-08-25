@@ -23,7 +23,7 @@ const useStyles = makeStyles(() => ({
 }));
 
 export default function TopCollectors({ collectors, filter = [] }) {
-  const [val, setValue] = useState();
+  const [val, setValue] = useState("");
 
   const handleChange = (event) => {
     setValue(event.target.value);
@@ -45,15 +45,7 @@ export default function TopCollectors({ collectors, filter = [] }) {
           >
             <FormControl sx={{ m: 1, minWidth: 200 }}>
               <InputLabel>Sort by</InputLabel>
-              <Select
-                value={val}
-                onChange={handleChange}
-                inputProps={{
-                  classes: {
-                    icon: classes.icon,
-                  },
-                }}
-              >
+              <Select value={val} onChange={handleChange}>
                 {filter.map((arr, i) => (
                   <MenuItem key={i} value={i}>
                     {arr.label}

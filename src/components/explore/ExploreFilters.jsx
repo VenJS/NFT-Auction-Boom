@@ -22,23 +22,7 @@ const useStyles = makeStyles(() => ({
 export default function ExploreFilters({ filters = [], prices = [] }) {
   const classes = useStyles();
 
-  const [value, setValue] = useState();
-  const [nftFilters, setNftFilters] = useState();
-  const [nftPrices, setNftPrices] = useState();
-
-  useEffect(async () => {
-    const result = await fetch("https://nft-auction.herokuapp.com/explore")
-      .then((response) => response.json())
-      .then((res) => res.filters.sort);
-    setNftFilters(result);
-  }, []);
-
-  useEffect(async () => {
-    const result = await fetch("https://nft-auction.herokuapp.com/explore")
-      .then((response) => response.json())
-      .then((res) => res.filters.price);
-    setNftPrices(result);
-  }, []);
+  const [value, setValue] = useState("");
 
   const handleChange = (event) => {
     setValue(event.target.value);
@@ -48,15 +32,7 @@ export default function ExploreFilters({ filters = [], prices = [] }) {
     <div className={classNames(styles["explore-filters"])}>
       <FormControl className={classNames(styles.selectors)}>
         <InputLabel>Sort by</InputLabel>
-        <Select
-          inputProps={{
-            classes: {
-              icon: classes.icon,
-            },
-          }}
-          value={value}
-          onChange={handleChange}
-        >
+        <Select value={value} onChange={handleChange}>
           {filters.map((arr, i) => {
             return (
               <MenuItem key={i} value={i}>
@@ -68,15 +44,7 @@ export default function ExploreFilters({ filters = [], prices = [] }) {
       </FormControl>
       <FormControl className={classNames(styles.selectors)}>
         <InputLabel>Price range</InputLabel>
-        <Select
-          value={value}
-          onChange={handleChange}
-          inputProps={{
-            classes: {
-              icon: classes.icon,
-            },
-          }}
-        >
+        <Select value={value} onChange={handleChange}>
           {prices.map((arr, i) => (
             <MenuItem key={i} value={i}>
               {arr.label}

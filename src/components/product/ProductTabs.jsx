@@ -26,11 +26,19 @@ export default function ProductTabs({
     },
   ],
 }) {
-  const [selectedTab, setSelectedTab] = useState();
+  const [selectedTab, setSelectedTab] = useState(0);
 
   const handleChange = (event, newValue) => {
     setSelectedTab(newValue);
   };
+
+  // <div
+  //               className={
+  //                 i % 2 !== 0
+  //                   ? classNames(styles.light)
+  //                   : classNames(styles.dark)
+  //               }
+  //             ></div>
 
   return (
     <div className={classNames(styles["product-tabs"])}>
@@ -48,15 +56,9 @@ export default function ProductTabs({
       {selectedTab === 0 && <p className={classNames(styles.text)}>{text}</p>}
       {selectedTab === 1 && (
         <table className={classNames(styles.table)}>
-          {bids.map((bid, i) => (
-            <TableRow className={`table-row-${i}`}>
-              <div
-                className={
-                  i % 2 !== 0
-                    ? classNames(styles.light)
-                    : classNames(styles.dark)
-                }
-              >
+          <tbody>
+            {bids.map((bid, i) => (
+              <TableRow key={i} className={`table-row-${i}`}>
                 <TableCell className={classNames(styles.name)}>
                   <User name={bid.user.name}></User>
                 </TableCell>
@@ -70,9 +72,9 @@ export default function ProductTabs({
                     {bid.date} ago
                   </span>
                 </TableCell>
-              </div>
-            </TableRow>
-          ))}
+              </TableRow>
+            ))}
+          </tbody>
         </table>
       )}
     </div>

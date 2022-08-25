@@ -1,24 +1,25 @@
 import Header from "../../../src/components/header/Header";
 import Footer from "../../../src/components/footer/Footer";
 import ProductContainer from "../../../src/components/product/ProductContainer";
-import dataNfts from "../../../data/nfts.json";
+import axios from "axios";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 
 export default function Page() {
   const router = useRouter();
   const id = router.query.id;
-  console.log(id);
-
-  let url = process.env.apiUrl;
 
   const [product, setProduct] = useState();
 
-  useEffect(async () => {
-    const result = await fetch(`https://nft-auction.herokuapp.com/nfts/${id}`)
-      .then((response) => response.json())
-      .then((res) => res);
-    setProduct(result);
+  useEffect(() => {
+    const fetchedData = async () => {
+      const result = await axios.get("https://nft-auction.herokuapp.com/nfts");
+      console.log(id);
+      console.log(result.data);
+      console.log(result.data[`${id}`]);
+      setProduct(result.data[`${id}`]);
+    };
+    fetchedData();
   }, []);
 
   console.log(product);
@@ -26,7 +27,17 @@ export default function Page() {
   return (
     <div>
       <Header></Header>
-      <ProductContainer product={product}></ProductContainer>
+      <ProductContainer
+      // name={product.name}
+      // owner={product.owner.username}
+      // price={product.price}
+      // currency={product.currency}
+      // likes={product.likes}
+      // auction_end={product.auction_end}
+      // details={product.details}
+      // bids={product.bids}
+      // source={product.image}
+      ></ProductContainer>
       <Footer></Footer>
     </div>
   );

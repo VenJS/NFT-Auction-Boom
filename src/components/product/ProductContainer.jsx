@@ -8,24 +8,23 @@ import ProductTabs from "./ProductTabs";
 import { useRouter } from "next/router";
 
 export default function ProductContainer({
-  name = "Gentleman ",
-  owner = "Murphy",
-  price = 25,
-  currency = "LTC",
-  likes = 250,
+  name,
+  owner,
+  price,
+  currency,
+  likes,
   auction_end,
-  details = "The god Bragi asks where a thundering sound is coming from, and says that the benches of Valhalla are creaking—as if the god Baldr had returned to Valhalla—and that it sounds like the movement of a thousand. Odin responds that Bragi knows well that the sounds are for Eric Bloodaxe, who will soon arrive in Valhalla. Odin tells the heroes Sigmund and Sinfjötli to rise to greet Eric and invite him into the hall, if it is indeed he.Sigmund asks Odin why he would expect Eric more than any other king, to which Odin responds that Eric has reddened his gore-drenched sword with many other lands. Eric arrives, and Sigmund greets him, tells him that he is welcome to come into the hall, and asks him what other lords he has brought with him to Valhalla. Eric says that with him are five kings, that he will tell them the name of them all, and that he, himself, is the sixth.",
+  details,
   bids,
   source,
 }) {
   const router = useRouter();
-  console.log(router.query);
 
   return (
     <div className={classNames(styles["product-container"])}>
       <Grid container spacing={1}>
         <Grid item xs={6}>
-          <ProductImage url="https://miro.medium.com/max/1000/1*jKnY9OzEhllkSjq_W7zFbg.png"></ProductImage>
+          <ProductImage url={source}></ProductImage>
         </Grid>
         <Grid item xs={5} className={classNames(styles["grid-container"])}>
           <ProductInfo
@@ -34,7 +33,7 @@ export default function ProductContainer({
             price={price}
             currency={currency}
             likes={likes}
-            timeEnd={source}
+            timeEnd={auction_end}
             isLive={true}
             onTimeEnd={auction_end}
           ></ProductInfo>

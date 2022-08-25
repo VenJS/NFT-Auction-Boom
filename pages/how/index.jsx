@@ -2,8 +2,10 @@ import Header from "../../src/components/header/Header";
 import Hero from "../../src/components/hero/Hero";
 import Description from "../../src/components/description/Description";
 import Footer from "../../src/components/footer/Footer";
+import data from "../../data/nfts.json";
 
 export default function How() {
+  console.log(data);
   return (
     <div>
       <Header></Header>

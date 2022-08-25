@@ -17,7 +17,7 @@ const useStyles = makeStyles(() => ({
 }));
 
 export default function Auctions({ cards = [], filter = [] }) {
-  const [value, setValue] = useState();
+  const [value, setValue] = useState("");
 
   const handleChange = (event) => {
     setValue(event.target.value);
@@ -41,11 +41,6 @@ export default function Auctions({ cards = [], filter = [] }) {
             className={classNames(styles.select)}
             value={value}
             onChange={handleChange}
-            inputProps={{
-              classes: {
-                icon: classes.icon,
-              },
-            }}
           >
             {filter.map((arr, i) => (
               <MenuItem key={i} value={i}>

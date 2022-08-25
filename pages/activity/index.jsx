@@ -3,8 +3,6 @@ import Hero from "../../src/components/hero/Hero";
 import ActivityFilters from "../../src/components/activity/ActivityFilters";
 import ActivityList from "../../src/components/activity/ActivityList";
 import Footer from "../../src/components/footer/Footer";
-
-import dataActivity from "../../data/activity.json";
 import { useState, useEffect } from "react";
 
 export default function Activity({ name, mediaU }) {
@@ -26,8 +24,6 @@ export default function Activity({ name, mediaU }) {
       .then((res) => res.filters.sort);
     setActivityFilters(result);
   }, []);
-
-  console.log(activity);
 
   return (
     <div>
